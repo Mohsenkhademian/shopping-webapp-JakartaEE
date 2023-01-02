@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="store-webapp-JakartaEE:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>store-webapp-JakartaEE</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="store-webapp-JakartaEE-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="store-webapp-JakartaEE:war exploded" />
+    </root>
+  </artifact>
+</component>
