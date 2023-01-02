@@ -11,12 +11,10 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
-@Entity(name = "adminEntity")
-@Table(name = "admin")
-public class Admin extends BaseEntity {
-    @Column(name = "c_username")
-    private String userName;
-    @Column(name = "c_password")
-    private String password;
+@Entity(name = "commentEntity")
+@Table(name = "comment")
+public class Comment extends BaseEntity {
+    @Column(name = "c_text")
+    private String text;
 
 }
