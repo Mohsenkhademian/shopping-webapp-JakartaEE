@@ -3,8 +3,11 @@ package com.mhn.storewebappjakartaee.model.entity;
 import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,4 +23,7 @@ public class Item extends BaseEntity {
     private String description;
     @Column(name = "c_price")
     private double price;
+
+    /*@OneToMany(mappedBy = "product")
+    private List<Offer> offers;*/
 }
