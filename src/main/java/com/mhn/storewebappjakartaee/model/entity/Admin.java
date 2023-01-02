@@ -18,5 +18,5 @@ public class Admin extends BaseEntity {
     private String userName;
     @Column(name = "c_password")
     private String password;
-
+///private String
 }
