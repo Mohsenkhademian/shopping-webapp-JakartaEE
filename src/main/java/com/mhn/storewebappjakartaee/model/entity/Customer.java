@@ -14,8 +14,12 @@ import lombok.*;
 @Entity(name = "customerEntity")
 @Table(name = "customer")
 public class Customer extends BaseEntity {
+
     @Column(name = "c_name")
     private String name;
+
     @Column(name = "c_email")
     private String email;
+
+
 }

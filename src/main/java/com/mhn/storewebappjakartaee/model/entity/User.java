@@ -14,10 +14,11 @@ import lombok.*;
 @Entity(name = "userEntity")
 @Table(name = "user")
 public class User extends BaseEntity {
+
     @Column(name = "c_username")
     private String userName;
+
     @Column(name = "c_password")
     private String password;
-
 
 }

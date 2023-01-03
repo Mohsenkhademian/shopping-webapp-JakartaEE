@@ -23,8 +23,8 @@ public class Storage extends BaseEntity {
     @Column(name = "c_availablecapacity")
     private int availableCapacity;
 
-    /*@OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "storage_id")
-    private List<Item> items;*/
+    private List<Item> items;
 
 }
