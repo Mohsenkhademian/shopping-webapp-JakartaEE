@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 
 @Getter
@@ -13,19 +14,22 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @Entity(name = "orderEntity")
-@Table(name = "order")
+@Table(name = "t_order")
 public class Order extends BaseEntity {
+
     @Column(name = "c_customername")
     private String customerName;
+
     @Column(name = "c_customeraddress")
     private String customerAddress;
 
+    @Column(name = "c_orderdate")
     @Temporal(TemporalType.DATE)
     private Date orderDate;
 
-  /*  @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "order_id")
-    private List<Item> items;*/
+    private List<Item> items;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")

@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -12,22 +13,27 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @Entity(name = "deliveryEntity")
-@Table(name = "delivery")
+@Table(name = "t_delivery")
 public class Delivery extends BaseEntity {
+
+    @Column(name = "c_recipientname")
     private String recipientName;
+    @Column(name = "c_recipientaddress")
     private String recipientAddress;
 
-
+    @Column(name = "c_deliverystatus")
     private Boolean deliveryStatus;
 
+    @Column(name = "c_deliverydate")
     @Temporal(TemporalType.DATE)
     private Date deliveryDate;
 
+    @Column(name = "c_deliverytime")
     @Temporal(TemporalType.TIME)
     private Date deliveryTime;
 
-   /* @ElementCollection
-    private List<String> items;*/
+    @ElementCollection
+    private List<String> items;
 
     @OneToOne
     @JoinColumn(name = "order_id")

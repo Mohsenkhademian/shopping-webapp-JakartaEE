@@ -12,7 +12,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @Entity(name = "userEntity")
-@Table(name = "user")
+@Table(name = "t_user")
 public class User extends BaseEntity {
 
     @Column(name = "c_username")

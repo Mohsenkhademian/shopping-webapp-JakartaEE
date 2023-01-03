@@ -12,11 +12,13 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @Entity(name = "paymentTransactionsEntity")
-@Table(name = "paymentTransactions")
+@Table(name = "t_paymentTransactions")
 public class PaymentTransaction extends BaseEntity {
 
+    @Column(name = "c_amount")
     private double amount;
 
+    @Column(name = "c_transationtime")
     @Temporal(TemporalType.TIMESTAMP)
     private Date transactionTime;
 

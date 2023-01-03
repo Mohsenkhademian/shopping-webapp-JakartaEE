@@ -12,14 +12,18 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @Entity(name = "storageEntity")
-@Table(name = "storage")
+@Table(name = "t_storage")
 public class Storage extends BaseEntity {
+
     @Column(name = "c_name")
     private String name;
+
     @Column(name = "c_address")
     private String address;
+
     @Column(name = "c_capacity")
     private int capacity;
+
     @Column(name = "c_availablecapacity")
     private int availableCapacity;
 

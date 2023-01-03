@@ -12,17 +12,17 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @Entity(name = "itemEntity")
-@Table(name = "item")
+@Table(name = "t_item")
 public class Item extends BaseEntity {
+
     @Column(name = "c_name")
     private String name;
+
     @Column(name = "c_description")
     private String description;
+
     @Column(name = "c_price")
     private double price;
-
-    /*@OneToMany(mappedBy = "product")
-    private List<Offer> offers;*/
 
     @OneToOne
     @JoinColumn(name = "offer_id")
