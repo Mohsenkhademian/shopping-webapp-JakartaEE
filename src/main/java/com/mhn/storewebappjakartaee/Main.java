@@ -21,7 +21,7 @@ public class Main {
         UserService.getUserService().delete(2L);
         System.out.println(UserService.getUserService().findAll().toString());
 
-        /* ---------------------------------------------------------------------- */
+        /* -----------------      Test for Admin    ------------------------------ */
 
         Admin admin = Admin.builder().userName("mohsenAdmin").password("admin123").build();
         AdminService.getAdminService().save(admin);
