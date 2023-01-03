@@ -14,8 +14,8 @@ import lombok.*;
 @Entity(name = "offerEntity")
 @Table(name = "offer")
 public class Offer extends BaseEntity {
+
     @Column(name = "c_price")
     private double price;
-
 
 }

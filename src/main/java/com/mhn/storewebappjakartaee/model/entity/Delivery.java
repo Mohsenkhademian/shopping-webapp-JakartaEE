@@ -28,4 +28,8 @@ public class Delivery extends BaseEntity {
 
    /* @ElementCollection
     private List<String> items;*/
+
+    @OneToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
 }
