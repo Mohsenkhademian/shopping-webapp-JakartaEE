@@ -7,5 +7,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         User user = User.builder().userName("moshen").password("moshen123").build();
         UserService.getUserService().save(user);
+
     }
 }
