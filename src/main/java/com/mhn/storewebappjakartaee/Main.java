@@ -3,6 +3,7 @@ package com.mhn.storewebappjakartaee;
 import com.mhn.storewebappjakartaee.model.entity.Admin;
 import com.mhn.storewebappjakartaee.model.entity.User;
 import com.mhn.storewebappjakartaee.model.repository.CRUDRepository;
+import com.mhn.storewebappjakartaee.model.service.AdminService;
 import com.mhn.storewebappjakartaee.model.service.UserService;
 
 public class Main {
@@ -17,11 +18,22 @@ public class Main {
         UserService.getUserService().update(user);
         System.out.println(UserService.getUserService().findById(1L).toString());
         UserService.getUserService().delete(1L);
+        UserService.getUserService().delete(2L);
         System.out.println(UserService.getUserService().findAll().toString());
 
         /* ---------------------------------------------------------------------- */
 
-//        Admin admin = Admin.builder().userName("mohsenAdmin").password("admin123").build();
+        Admin admin = Admin.builder().userName("mohsenAdmin").password("admin123").build();
+        AdminService.getAdminService().save(admin);
+        admin.setUserName("mamadAdmin");
+        AdminService.getAdminService().update(admin);
+        System.out.println(AdminService.getAdminService().findById(1L).toString());
+        System.out.println(AdminService.getAdminService().findAll().toString());
+        AdminService.getAdminService().delete(1L);
+
+        /* ---------------------------------------------------------------------- */
+
+
 
     }
 }
