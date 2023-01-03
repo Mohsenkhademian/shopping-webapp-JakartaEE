@@ -8,12 +8,5 @@ public class Main {
         User user = User.builder().userName("moshen").password("moshen123").build();
         UserService.getUserService().save(user);
 
-        //;sdkflsdkfjlasdkfjlasdkfjlsadkjf;dksf;lskdf;l
-        //lsdfjlskdafjlksajdflskdjfl
-
-        //dslkfladkflaskdflskdfllsdf
-
-        //sdlfjsladfkjlsdkaflsakdfls
-
     }
 }
