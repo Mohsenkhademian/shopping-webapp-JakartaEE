@@ -8,11 +8,12 @@ import lombok.*;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
 @Entity(name = "customerEntity")
-@Table(name = "customer")
+@Table(name = "t_customer")
 public class Customer extends BaseEntity {
 
     @Column(name = "c_name")

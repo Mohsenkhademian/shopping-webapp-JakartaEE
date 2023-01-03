@@ -8,11 +8,12 @@ import lombok.*;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
 @Entity(name = "offerEntity")
-@Table(name = "offer")
+@Table(name = "t_offer")
 public class Offer extends BaseEntity {
 
     @Column(name = "c_price")

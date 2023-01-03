@@ -8,14 +8,17 @@ import lombok.*;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
 @Entity(name = "adminEntity")
-@Table(name = "admin")
+@Table(name = "t_admin")
 public class Admin extends BaseEntity {
+
     @Column(name = "c_username")
     private String userName;
+
     @Column(name = "c_password")
     private String password;
 

@@ -6,11 +6,12 @@ import lombok.*;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
 @Entity(name = "commentEntity")
-@Table(name = "comment")
+@Table(name = "t_comment")
 public class Comment extends BaseEntity {
 
     @Column(name = "c_text")
