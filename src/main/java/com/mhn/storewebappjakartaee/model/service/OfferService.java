@@ -1,6 +1,5 @@
 package com.mhn.storewebappjakartaee.model.service;
 
-import com.mhn.storewebappjakartaee.model.entity.Comment;
 import com.mhn.storewebappjakartaee.model.entity.Offer;
 import com.mhn.storewebappjakartaee.model.repository.CRUDRepository;
 import com.mhn.storewebappjakartaee.model.service.base.ServiceImpl;
