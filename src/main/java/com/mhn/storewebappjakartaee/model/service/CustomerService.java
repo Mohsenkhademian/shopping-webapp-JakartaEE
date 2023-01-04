@@ -7,7 +7,7 @@ import com.mhn.storewebappjakartaee.model.service.base.ServiceImpl;
 import java.util.List;
 
 public class CustomerService extends ServiceImpl<Customer, Long> {
-    private static CustomerService customerService = new CustomerService();
+    private static final CustomerService customerService = new CustomerService();
 
     private CustomerService(){
     }
