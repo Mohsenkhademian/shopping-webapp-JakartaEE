@@ -2,9 +2,11 @@ package com.mhn.storewebappjakartaee;
 
 import com.mhn.storewebappjakartaee.model.entity.Admin;
 import com.mhn.storewebappjakartaee.model.entity.Comment;
+import com.mhn.storewebappjakartaee.model.entity.Customer;
 import com.mhn.storewebappjakartaee.model.entity.User;
 import com.mhn.storewebappjakartaee.model.service.AdminService;
 import com.mhn.storewebappjakartaee.model.service.CommentService;
+import com.mhn.storewebappjakartaee.model.service.CustomerService;
 import com.mhn.storewebappjakartaee.model.service.UserService;
 
 public class Main {
@@ -43,6 +45,16 @@ public class Main {
 //        CommentService.getCommentService().delete(1L);
 
         /* -------------------    Test for Customer  ----------------------------- */
+
+        Customer customer = Customer.builder().name("moshen").email("mohsen@gmail.com").build();
+        CustomerService.getCustomerService().save(customer);
+        customer.setName("mamad");
+        CustomerService.getCustomerService().update(customer);
+        System.out.println(CustomerService.getCustomerService().findById(1L).toString());
+        System.out.println(CustomerService.getCustomerService().findAll().toString());
+//        CustomerService.getCustomerService().delete(1L);
+
+        /* ------------------    Test for Delivery    ------------------------------*/
 
 
 
