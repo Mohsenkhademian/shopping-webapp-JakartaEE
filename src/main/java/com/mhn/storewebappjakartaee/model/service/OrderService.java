@@ -8,7 +8,7 @@ import com.mhn.storewebappjakartaee.model.service.base.ServiceImpl;
 import java.util.List;
 
 public class OrderService extends ServiceImpl<Order, Long> {
-    private static OrderService orderService = new OrderService();
+    private static final OrderService orderService = new OrderService();
 
     private OrderService(){
     }

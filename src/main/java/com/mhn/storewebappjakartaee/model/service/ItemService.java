@@ -8,7 +8,7 @@ import com.mhn.storewebappjakartaee.model.service.base.ServiceImpl;
 import java.util.List;
 
 public class ItemService extends ServiceImpl<Item , Long> {
-    private static ItemService itemService = new ItemService();
+    private static final ItemService itemService = new ItemService();
 
     private ItemService(){
     }

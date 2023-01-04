@@ -8,7 +8,7 @@ import com.mhn.storewebappjakartaee.model.service.base.ServiceImpl;
 import java.util.List;
 
 public class DeliveryService extends ServiceImpl<Delivery , Long> {
-    private static DeliveryService deliveryService = new DeliveryService();
+    private static final DeliveryService deliveryService = new DeliveryService();
 
     private DeliveryService(){
     }
