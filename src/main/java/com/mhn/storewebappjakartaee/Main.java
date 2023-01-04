@@ -1,9 +1,10 @@
 package com.mhn.storewebappjakartaee;
 
 import com.mhn.storewebappjakartaee.model.entity.Admin;
+import com.mhn.storewebappjakartaee.model.entity.Comment;
 import com.mhn.storewebappjakartaee.model.entity.User;
-import com.mhn.storewebappjakartaee.model.repository.CRUDRepository;
 import com.mhn.storewebappjakartaee.model.service.AdminService;
+import com.mhn.storewebappjakartaee.model.service.CommentService;
 import com.mhn.storewebappjakartaee.model.service.UserService;
 
 public class Main {
@@ -17,8 +18,8 @@ public class Main {
         user.setPassword("ali123");
         UserService.getUserService().update(user);
         System.out.println(UserService.getUserService().findById(1L).toString());
-        UserService.getUserService().delete(1L);
-        UserService.getUserService().delete(2L);
+//        UserService.getUserService().delete(1L);
+//        UserService.getUserService().delete(2L);
         System.out.println(UserService.getUserService().findAll().toString());
 
         /* -----------------      Test for Admin    ------------------------------ */
@@ -29,9 +30,19 @@ public class Main {
         AdminService.getAdminService().update(admin);
         System.out.println(AdminService.getAdminService().findById(1L).toString());
         System.out.println(AdminService.getAdminService().findAll().toString());
-        AdminService.getAdminService().delete(1L);
+//        AdminService.getAdminService().delete(1L);
 
-        /* ---------------------------------------------------------------------- */
+        /* ---------------      Test for Comment        -------------------------- */
+
+        Comment comment = Comment.builder().text("VeryGood.....").userId(1L).build();
+        CommentService.getCommentService().save(comment);
+        comment.setText("No it is a baddd");
+        CommentService.getCommentService().update(comment);
+        System.out.println(CommentService.getCommentService().findById(1L).toString());
+        System.out.println(CommentService.getCommentService().findAll().toString());
+//        CommentService.getCommentService().delete(1L);
+
+        /* -------------------    Test for Customer  ----------------------------- */
 
 
 

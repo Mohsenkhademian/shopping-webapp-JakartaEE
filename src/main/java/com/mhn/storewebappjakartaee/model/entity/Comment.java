@@ -14,12 +14,15 @@ import lombok.*;
 @Table(name = "t_comment")
 public class Comment extends BaseEntity {
 
+    @JoinColumn(name = "user_id")
+    private long userId;
+
     @Column(name = "c_text")
     private String text;
 
-    @ManyToOne
+   /* @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private User user;*/
 
 
 }
