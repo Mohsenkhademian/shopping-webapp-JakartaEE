@@ -17,6 +17,9 @@ import java.util.List;
 @Table(name = "t_delivery")
 public class Delivery extends BaseEntity {
 
+    @JoinColumn(name = "order_id")
+    private long orderId;
+
     @Column(name = "c_recipientname")
     private String recipientName;
 
@@ -37,7 +40,7 @@ public class Delivery extends BaseEntity {
     @ElementCollection
     private List<String> items;
 
-    @OneToOne
+    /*@OneToOne
     @JoinColumn(name = "order_id")
-    private Order order;
+    private Order order;*/
 }
