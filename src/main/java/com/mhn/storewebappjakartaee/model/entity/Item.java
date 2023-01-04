@@ -16,6 +16,9 @@ import java.util.List;
 @Table(name = "t_item")
 public class Item extends BaseEntity {
 
+    @JoinColumn(name = "offer_id")
+    private long offerId;
+
     @Column(name = "c_name")
     private String name;
 
@@ -25,7 +28,7 @@ public class Item extends BaseEntity {
     @Column(name = "c_price")
     private double price;
 
-    @OneToOne
+    /*@OneToOne
     @JoinColumn(name = "offer_id")
-    private Offer offer;
+    private Offer offer;*/
 }

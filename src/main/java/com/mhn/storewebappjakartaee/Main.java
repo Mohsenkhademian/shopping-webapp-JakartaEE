@@ -1,13 +1,9 @@
 package com.mhn.storewebappjakartaee;
 
-import com.mhn.storewebappjakartaee.model.entity.Admin;
-import com.mhn.storewebappjakartaee.model.entity.Comment;
-import com.mhn.storewebappjakartaee.model.entity.Customer;
-import com.mhn.storewebappjakartaee.model.entity.User;
-import com.mhn.storewebappjakartaee.model.service.AdminService;
-import com.mhn.storewebappjakartaee.model.service.CommentService;
-import com.mhn.storewebappjakartaee.model.service.CustomerService;
-import com.mhn.storewebappjakartaee.model.service.UserService;
+import com.mhn.storewebappjakartaee.model.entity.*;
+import com.mhn.storewebappjakartaee.model.service.*;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -55,6 +51,14 @@ public class Main {
 //        CustomerService.getCustomerService().delete(1L);
 
         /* ------------------    Test for Delivery    ------------------------------*/
+//        Offer offer = Offer.builder().price(123.34).build();
+//
+//
+//        Item item = Item.builder()..build();
+//
+//        Delivery delivery = Delivery.builder().recipientName("mohsen").recipientAddress("tehran-tehransar").deliveryStatus(true).deliveryDate(LocalDate.now()).build();
+//        DeliveryService.getDeliveryService().save(delivery);
+
 
 
 

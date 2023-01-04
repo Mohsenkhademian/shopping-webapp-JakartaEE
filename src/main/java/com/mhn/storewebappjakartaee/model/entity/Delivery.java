@@ -4,6 +4,7 @@ import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -20,6 +21,10 @@ public class Delivery extends BaseEntity {
     @JoinColumn(name = "order_id")
     private long orderId;
 
+    @JoinColumn(name = "item_id")
+    @ElementCollection
+    private List<Long> itemsId;
+
     @Column(name = "c_recipientname")
     private String recipientName;
 
@@ -31,14 +36,11 @@ public class Delivery extends BaseEntity {
 
     @Column(name = "c_deliverydate")
     @Temporal(TemporalType.DATE)
-    private Date deliveryDate;
+    private LocalDate deliveryDate;
 
-    @Column(name = "c_deliverytime")
+    /*@Column(name = "c_deliverytime")
     @Temporal(TemporalType.TIME)
-    private Date deliveryTime;
-
-    @ElementCollection
-    private List<String> items;
+    private Date deliveryTime;*/
 
     /*@OneToOne
     @JoinColumn(name = "order_id")
