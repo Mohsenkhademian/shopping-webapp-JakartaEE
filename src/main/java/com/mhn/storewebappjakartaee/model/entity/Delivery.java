@@ -19,6 +19,7 @@ public class Delivery extends BaseEntity {
 
     @Column(name = "c_recipientname")
     private String recipientName;
+
     @Column(name = "c_recipientaddress")
     private String recipientAddress;
 
