@@ -11,7 +11,7 @@ import com.mhn.storewebappjakartaee.model.service.UserService;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        /*         Test For User                                                  */
+        /* -----------------  Test For User  --------------------------------------*/
         User user = User.builder().userName("moshen").password("moshen123").build();
         User user1 = User.builder().userName("mamad").password("mamad123").build();
         UserService.getUserService().save(user);
