@@ -4,6 +4,7 @@ import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +19,9 @@ import java.util.List;
 @Table(name = "t_order")
 public class Order extends BaseEntity {
 
+    @JoinColumn(name = "customer_id")
+    private long customerId;
+
     @Column(name = "c_customername")
     private String customerName;
 
@@ -26,14 +30,14 @@ public class Order extends BaseEntity {
 
     @Column(name = "c_orderdate")
     @Temporal(TemporalType.DATE)
-    private Date orderDate;
+    private LocalDate orderDate;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "order_id")
     private List<Item> items;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "customer_id")
-    private Customer customer;
+    private Customer customer;*/
 
 }

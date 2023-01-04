@@ -1,6 +1,5 @@
 package com.mhn.storewebappjakartaee.model.service;
 
-import com.mhn.storewebappjakartaee.model.entity.Delivery;
 import com.mhn.storewebappjakartaee.model.entity.Order;
 import com.mhn.storewebappjakartaee.model.repository.CRUDRepository;
 import com.mhn.storewebappjakartaee.model.service.base.ServiceImpl;
@@ -13,7 +12,7 @@ public class OrderService extends ServiceImpl<Order, Long> {
     private OrderService(){
     }
 
-    public static OrderService getOrderService(){return getOrderService();}
+    public static OrderService getOrderService(){return orderService;}
 
     @Override
     public Order save(Order order) throws Exception {

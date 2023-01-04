@@ -16,6 +16,12 @@ import java.util.List;
 @Table(name = "t_item")
 public class Item extends BaseEntity {
 
+    @JoinColumn(name = "order_id")
+    private long orderId;
+
+    @JoinColumn(name = "storage_id")
+    private long storageId;
+
     @JoinColumn(name = "offer_id")
     private long offerId;
 

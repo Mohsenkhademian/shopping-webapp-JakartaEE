@@ -4,6 +4,8 @@ import com.mhn.storewebappjakartaee.model.entity.*;
 import com.mhn.storewebappjakartaee.model.service.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -50,14 +52,51 @@ public class Main {
         System.out.println(CustomerService.getCustomerService().findAll().toString());
 //        CustomerService.getCustomerService().delete(1L);
 
-        /* ------------------    Test for Delivery    ------------------------------*/
-//        Offer offer = Offer.builder().price(123.34).build();
-//
-//
-//        Item item = Item.builder()..build();
-//
-//        Delivery delivery = Delivery.builder().recipientName("mohsen").recipientAddress("tehran-tehransar").deliveryStatus(true).deliveryDate(LocalDate.now()).build();
-//        DeliveryService.getDeliveryService().save(delivery);
+        /* ------------------    Test for Item    ------------------------------*/
+
+        Item item1 = Item.builder().offerId(1L).name("Phone").description("iphone x roze gold").price(1234.23).build();
+        Item item2 = Item.builder().offerId(1L).name("Tablet").description("ipad pro 2022").price(8723234.23).build();
+        Item item3 = Item.builder().offerId(1L).name("Laptop").description("Lenovo ip5 Ram 8 , 512 ssd").price(1734.23).build();
+        Item item4 = Item.builder().offerId(1L).name("TV").description("samsung smart").price(456234.23).build();
+        List<Item> itemList = new ArrayList<>();
+        itemList.add(item1);
+        itemList.add(item2);
+        itemList.add(item3);
+        itemList.add(item4);
+
+        ItemService.getItemService().save(item1);
+        ItemService.getItemService().save(item2);
+        ItemService.getItemService().save(item3);
+        ItemService.getItemService().save(item4);
+
+        item1.setName("Mobile");
+        ItemService.getItemService().update(item1);
+        System.out.println(ItemService.getItemService().findById(1L).toString());
+        System.out.println(ItemService.getItemService().findAll().toString());
+//        ItemService.getItemService().delete(1L);
+//        ItemService.getItemService().delete(2L);
+//        ItemService.getItemService().delete(3L);
+
+        /* ------------------    Test for Order    ------------------------------*/
+
+        /*Order order = Order.builder().customerName("Mohsen").customerAddress("Tehran-tehransar").orderDate(LocalDate.now()).customerId(1L).items(itemList).build();
+        OrderService.getOrderService().save(order);*/
+
+
+
+
+
+
+
+
+
+       /* Offer offer = Offer.builder().price(123.342).build();
+
+
+
+
+        Delivery delivery = Delivery.builder().recipientName("mohsen").recipientAddress("tehran-tehransar").deliveryStatus(true).deliveryDate(LocalDate.now()).build();
+        DeliveryService.getDeliveryService().save(delivery);*/
 
 
 
