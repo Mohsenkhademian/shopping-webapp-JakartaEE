@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        /* -----------------  Test For User  --------------------------------------*/
+      /*  *//* -----------------  Test For User  --------------------------------------*//*
         User user = User.builder().userName("moshen").password("moshen123").build();
         User user1 = User.builder().userName("mamad").password("mamad123").build();
         UserService.getUserService().save(user);
@@ -22,7 +22,7 @@ public class Main {
 //        UserService.getUserService().delete(2L);
         System.out.println(UserService.getUserService().findAll().toString());
 
-        /* -----------------      Test for Admin    ------------------------------ */
+        *//* -----------------      Test for Admin    ------------------------------ *//*
 
         Admin admin = Admin.builder().userName("mohsenAdmin").password("admin123").build();
         AdminService.getAdminService().save(admin);
@@ -32,7 +32,7 @@ public class Main {
         System.out.println(AdminService.getAdminService().findAll().toString());
 //        AdminService.getAdminService().delete(1L);
 
-        /* ---------------      Test for Comment        -------------------------- */
+        *//* ---------------      Test for Comment        -------------------------- *//*
 
         Comment comment = Comment.builder().text("VeryGood.....").userId(1L).build();
         CommentService.getCommentService().save(comment);
@@ -42,7 +42,7 @@ public class Main {
         System.out.println(CommentService.getCommentService().findAll().toString());
 //        CommentService.getCommentService().delete(1L);
 
-        /* -------------------    Test for Customer  ----------------------------- */
+        *//* -------------------    Test for Customer  ----------------------------- *//*
 
         Customer customer = Customer.builder().name("moshen").email("mohsen@gmail.com").build();
         CustomerService.getCustomerService().save(customer);
@@ -52,7 +52,7 @@ public class Main {
         System.out.println(CustomerService.getCustomerService().findAll().toString());
 //        CustomerService.getCustomerService().delete(1L);
 
-        /* ------------------    Test for Item    ------------------------------*/
+        *//* ------------------    Test for Item    ------------------------------*//*
 
         Item item1 = Item.builder().offerId(1L).name("Phone").description("iphone x roze gold").price(1234.23).build();
         Item item2 = Item.builder().offerId(1L).name("Tablet").description("ipad pro 2022").price(8723234.23).build();
@@ -73,22 +73,14 @@ public class Main {
         ItemService.getItemService().update(item1);
         System.out.println(ItemService.getItemService().findById(1L).toString());
         System.out.println(ItemService.getItemService().findAll().toString());
-//        ItemService.getItemService().delete(1L);
-//        ItemService.getItemService().delete(2L);
-//        ItemService.getItemService().delete(3L);
+        ItemService.getItemService().delete(1L);
+        ItemService.getItemService().delete(2L);
+        ItemService.getItemService().delete(3L);
 
-        /* ------------------    Test for Order    ------------------------------*/
+        *//* ------------------    Test for Order    ------------------------------*//*
 
-        /*Order order = Order.builder().customerName("Mohsen").customerAddress("Tehran-tehransar").orderDate(LocalDate.now()).customerId(1L).items(itemList).build();
-        OrderService.getOrderService().save(order);*/
-
-
-
-
-
-
-
-
+        Order order = Order.builder().customerName("Mohsen").customerAddress("Tehran-tehransar").orderDate(LocalDate.now()).customerId(1L).items(itemList).build();
+        OrderService.getOrderService().save(order);
 
        /* Offer offer = Offer.builder().price(123.342).build();
 
