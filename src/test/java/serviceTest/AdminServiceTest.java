@@ -1,3 +1,5 @@
+package serviceTest;
+
 import com.mhn.storewebappjakartaee.model.entity.Admin;
 import com.mhn.storewebappjakartaee.model.service.AdminService;
 import org.junit.jupiter.api.Test;
