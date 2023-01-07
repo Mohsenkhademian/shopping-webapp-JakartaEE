@@ -5,9 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
-
 @Getter
 @Setter
 @ToString
@@ -21,9 +19,12 @@ public class Delivery extends BaseEntity {
     @JoinColumn(name = "order_id")
     private long orderId;
 
-    @JoinColumn(name = "item_id")
-    @ElementCollection
-    private List<Long> itemsId;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "delivery_item",
+            joinColumns = @JoinColumn(name = "delivery_id"),
+            inverseJoinColumns = @JoinColumn(name = "item_id"))
+    private List<Item> items;
+
 
     @Column(name = "c_recipientname")
     private String recipientName;
@@ -37,12 +38,4 @@ public class Delivery extends BaseEntity {
     @Column(name = "c_deliverydate")
     @Temporal(TemporalType.DATE)
     private LocalDate deliveryDate;
-
-    /*@Column(name = "c_deliverytime")
-    @Temporal(TemporalType.TIME)
-    private Date deliveryTime;*/
-
-    /*@OneToOne
-    @JoinColumn(name = "order_id")
-    private Order order;*/
 }
