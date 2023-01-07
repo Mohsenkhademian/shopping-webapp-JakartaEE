@@ -106,42 +106,43 @@ public class DeliveryServiceTest {
         assertEquals(delivery.getDeliveryStatus(), foundDelivery.getDeliveryStatus());
     }
 
-   /* @Test
-    void testFindAll() throws Exception {
-        Delivery delivery1 = service.save(Delivery.builder()
+    @Test
+    public void testFindAll() throws Exception{
+        // ایجاد و ذخیره چند تحویل
+        Delivery delivery1 = Delivery.builder()
                 .orderId(1L)
                 .items(Arrays.asList(
-                        Item.builder().name("Item 1").build(),
-                        Item.builder().name("Item 2").build()
+                        Item.builder().price(10.5).offerId(1L).name("Item 1").build()
                 ))
                 .recipientName("John Smith")
                 .recipientAddress("123 Main Street")
                 .deliveryStatus(true)
-                .build());
-
-        service.save(delivery1);
-
-        Delivery delivery2 = service.save(Delivery.builder()
-                .orderId(1L)
+                .deliveryDate(LocalDate.now())
+                .build();
+        Delivery delivery2 = Delivery.builder()
+                .orderId(2L)
                 .items(Arrays.asList(
-                        Item.builder().name("Item 1").build(),
-                        Item.builder().name("Item 2").build()
-                ))
-                .recipientName("John Smith")
-                .recipientAddress("123 Main Street")
+                        Item.builder().price(30.0).offerId(2L).name("Item 2").build()
+                        ))
+                .recipientName("Mohsen Khademian")
+                .recipientAddress("Tehran")
                 .deliveryStatus(true)
-                .build());
+                .deliveryDate(LocalDate.now())
+                .build();
 
-        service.save(delivery2);
+            service.save(delivery1);
+            service.save(delivery2);
 
-        List<Delivery> deliveryList = service.findAll();
+        // تلاش برای دریافت همه تحویل ها
+        List<Delivery> deliveries = null;
 
+            deliveries = service.findAll();
 
-        assertEquals(2, deliveryList.size());
-        assertTrue(deliveryList.stream().anyMatch(d -> d.getRecipientName().equals(delivery1.getRecipientName())));
-        assertTrue(deliveryList.stream().anyMatch(d -> d.getRecipientAddress().equals(delivery2.getRecipientAddress())));
+        // بررسی اینکه آیا همه تحویل ها با مقادیر ایجاد شده مشابه است
+        assertNotNull(deliveries);
+        assertEquals(2, deliveries.size());
+//        assertTrue(deliveries.contains(delivery1));
+//        assertTrue(deliveries.contains(delivery2));
     }
 
-
-*/
 }
