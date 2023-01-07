@@ -34,7 +34,4 @@ public class Item extends BaseEntity {
     @Column(name = "c_price")
     private double price;
 
-    /*@OneToOne
-    @JoinColumn(name = "offer_id")
-    private Offer offer;*/
 }
