@@ -36,8 +36,4 @@ public class Order extends BaseEntity {
     @JoinColumn(name = "order_id")
     private List<Item> items;
 
-    /*@ManyToOne
-    @JoinColumn(name = "customer_id")
-    private Customer customer;*/
-
 }
