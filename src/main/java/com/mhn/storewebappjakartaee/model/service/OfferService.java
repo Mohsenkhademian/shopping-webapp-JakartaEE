@@ -12,7 +12,7 @@ public class OfferService extends ServiceImpl<Offer , Long> {
     private OfferService(){
     }
 
-    public static OfferService getOfferService(){return getOfferService();}
+    public static OfferService getOfferService(){return offerService;}
 
     @Override
     public Offer save(Offer offer) throws Exception {
