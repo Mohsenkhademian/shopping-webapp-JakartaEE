@@ -13,7 +13,7 @@ public class DeliveryService extends ServiceImpl<Delivery , Long> {
     private DeliveryService(){
     }
 
-    public static DeliveryService getDeliveryService(){return getDeliveryService();}
+    public static DeliveryService getDeliveryService(){return deliveryService;}
 
 
     @Override
