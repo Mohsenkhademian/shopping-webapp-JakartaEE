@@ -20,9 +20,4 @@ public class Comment extends BaseEntity {
     @Column(name = "c_text")
     private String text;
 
-   /* @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;*/
-
-
 }

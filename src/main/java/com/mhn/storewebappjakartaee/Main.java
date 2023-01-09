@@ -3,18 +3,22 @@ package com.mhn.storewebappjakartaee;
 import com.mhn.storewebappjakartaee.model.entity.*;
 import com.mhn.storewebappjakartaee.model.service.*;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-      /*  *//* -----------------  Test For User  --------------------------------------*//*
-        User user = User.builder().userName("moshen").password("moshen123").build();
+        User user = UserService.getUserService().save(User.builder().userName("mohsen").password("mohsen123").build());
+//          User user = new User("Mohsen" , "Mohsen123");
+//          UserService userService = UserService.getUserService();
+//          userService.save(user);
+    }
+
+}
+       //* -----------------  Test For User  --------------------------------------*//*
+       /* User user = User.builder().userName("moshen").password("moshen123").build();
         User user1 = User.builder().userName("mamad").password("mamad123").build();
         UserService.getUserService().save(user);
         user.setUserName("ali");
-        user.setId(3L);
+        user.setId(3L);w
         user.setPassword("ali123");
         UserService.getUserService().update(user);
         System.out.println(UserService.getUserService().findById(1L).toString());
@@ -22,7 +26,7 @@ public class Main {
 //        UserService.getUserService().delete(2L);
         System.out.println(UserService.getUserService().findAll().toString());
 
-        *//* -----------------      Test for Admin    ------------------------------ *//*
+        /*   *//* -----------------      Test for Admin    ------------------------------ *//*
 
         Admin admin = Admin.builder().userName("mohsenAdmin").password("admin123").build();
         AdminService.getAdminService().save(admin);
@@ -89,9 +93,3 @@ public class Main {
 
         Delivery delivery = Delivery.builder().recipientName("mohsen").recipientAddress("tehran-tehransar").deliveryStatus(true).deliveryDate(LocalDate.now()).build();
         DeliveryService.getDeliveryService().save(delivery);*/
-
-
-
-
-    }
-}

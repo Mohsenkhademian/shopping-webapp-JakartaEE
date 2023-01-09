@@ -56,7 +56,7 @@ public class CRUDRepository<T, I> implements AutoCloseable {
         return tList;
     }
 
-    public List<T> executeQuery(String queryName) {
+    public List<T> executeQuery(String queryName,List<Object> paramList) {
         entityManager = JPA.getJpa().getEntityManager();
         Query query =
                 entityManager

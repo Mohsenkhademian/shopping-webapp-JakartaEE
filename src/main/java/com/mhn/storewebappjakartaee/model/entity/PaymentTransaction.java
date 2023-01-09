@@ -4,6 +4,7 @@ import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -20,8 +21,8 @@ public class PaymentTransaction extends BaseEntity {
     private double amount;
 
     @Column(name = "c_transationtime")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date transactionTime;
+//    @Temporal(TemporalType.TIMESTAMP)
+    private LocalDate transactionTime;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")

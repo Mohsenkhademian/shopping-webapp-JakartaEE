@@ -36,6 +36,6 @@ public class Delivery extends BaseEntity {
     private Boolean deliveryStatus;
 
     @Column(name = "c_deliverydate")
-    @Temporal(TemporalType.DATE)
+//    @Temporal(TemporalType.DATE)
     private LocalDate deliveryDate;
 }

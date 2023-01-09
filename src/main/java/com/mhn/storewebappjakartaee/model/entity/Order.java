@@ -29,7 +29,7 @@ public class Order extends BaseEntity {
     private String customerAddress;
 
     @Column(name = "c_orderdate")
-    @Temporal(TemporalType.DATE)
+//    @Temporal(TemporalType.DATE)
     private LocalDate orderDate;
 
     @OneToMany(cascade = CascadeType.ALL)
