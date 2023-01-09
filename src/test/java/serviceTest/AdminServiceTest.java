@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class AdminServiceTest {
     private AdminService adminService = AdminService.getAdminService();
 
+
     @Test
      void testSave() throws Exception{
         Admin admin = Admin.builder().userName("admin").password("admin123").build();
