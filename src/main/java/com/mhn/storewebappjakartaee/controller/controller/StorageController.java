@@ -1,6 +1,5 @@
 package com.mhn.storewebappjakartaee.controller.controller;
 
-import com.mhn.storewebappjakartaee.model.entity.PaymentTransaction;
 import com.mhn.storewebappjakartaee.model.entity.Storage;
 import com.mhn.storewebappjakartaee.model.service.StorageService;
 import jakarta.ws.rs.*;
@@ -8,7 +7,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import oracle.jdbc.proxy.annotation.Post;
 
-import java.awt.geom.RectangularShape;
+
 import java.util.List;
 
 @Path("/storages")
