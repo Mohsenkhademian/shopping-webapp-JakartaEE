@@ -5,7 +5,7 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<form action="/user" method="POST">
+<form action="/admin" method="PUT">
     <input type="text" name="id" placeholder="Enter id :"><br><br>
     <input type="text" name="username" placeholder="Enter UserName :"><br><br>
     <input type="password" name="password" placeholder="Enter Password :"><br><br>
