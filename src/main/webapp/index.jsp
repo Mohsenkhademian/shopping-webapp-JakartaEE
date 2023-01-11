@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>HOME</title>
 </head>
 <body>
 <%--
@@ -82,6 +82,11 @@
 --%>
 
 
+
+
+
+
+<%--
 <form action="offer" method="post">
     <label>Price:</label>
     <input type="text" name="price"/><br/>
@@ -90,7 +95,31 @@
 
 <form action="offer" method="GET">
     <input type="submit" value="List Offers">
+</form>--%>
+
+
+<form action="order" method="post">
+    <label>Customer Id:</label>
+    <input type="text" name="customerId"/><br/>
+    <label>Customer Name:</label>
+    <input type="text" name="customerName"/><br/>
+    <label>Customer Address:</label>
+    <input type="text" name="customerAddress"/><br/>
+    <label>Order Date:</label>
+    <input type="date" name="orderDate"/><br/>
+    <label>Select Items</label>
+    <select name="itemIds" multiple>
+        <c:forEach items="${items}" var="item">
+            <option value="${item.id}">${item.name}</option>
+        </c:forEach>
+    </select>
+    <input type="submit" value="Save"/>
 </form>
+
+<form action="order" method="GET">
+    <input type="submit" value="List Order">
+</form>
+
 
 
 
