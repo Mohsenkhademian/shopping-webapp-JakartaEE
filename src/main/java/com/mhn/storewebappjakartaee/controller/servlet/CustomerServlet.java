@@ -1,7 +1,9 @@
 package com.mhn.storewebappjakartaee.controller.servlet;
 
 import com.mhn.storewebappjakartaee.model.entity.Customer;
+import com.mhn.storewebappjakartaee.model.entity.User;
 import com.mhn.storewebappjakartaee.model.service.CustomerService;
+import com.mhn.storewebappjakartaee.model.service.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -26,14 +28,19 @@ public class CustomerServlet extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        resp.sendRedirect("index.jsp");
+        req.setAttribute("message", "Customer saved successfully!");
+        req.getRequestDispatcher("user.jsp").forward(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String customerId = req.getParameter("id");
-        String name = req.getParameter("name");
-        String email = req.getParameter("email");
-        Customer customer = null;
+        List<Customer> customers = null;
+        try {
+            customers = CustomerService.getCustomerService().findAll();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        req.setAttribute("customers", customers);
+        req.getRequestDispatcher("user.jsp").forward(req, resp);
     }
 }
