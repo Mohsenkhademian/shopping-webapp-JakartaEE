@@ -58,6 +58,7 @@
 --%>
 
 
+<%--
 
 <form action="item" method="post">
     <label>Order Id:</label>
@@ -78,12 +79,18 @@
 <form action="item" method="GET">
     <input type="submit" value="List Items">
 </form>
+--%>
 
 
+<form action="offer" method="post">
+    <label>Price:</label>
+    <input type="text" name="price"/><br/>
+    <input type="submit" value="Save"/>
+</form>
 
-
-
-
+<form action="offer" method="GET">
+    <input type="submit" value="List Offers">
+</form>
 
 
 
