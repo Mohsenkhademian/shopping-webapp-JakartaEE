@@ -51,7 +51,6 @@ public class PaymentTransactionServlet extends HttpServlet {
 
         try {
             paymentTransaction = PaymentTransactionService.getPaymentTransactionService().save(paymentTransaction);
-
         } catch (Exception e) {
             e.printStackTrace();
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);

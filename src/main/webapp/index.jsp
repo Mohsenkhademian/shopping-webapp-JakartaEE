@@ -126,6 +126,7 @@
 
 
 
+<%--
 
 <form action="paymenttransaction" method="post">
     <label>Amount:</label>
@@ -148,9 +149,30 @@
 <form action="paymenttransaction" method="GET">
     <input type="submit" value="List PaymentTransaction">
 </form>
+--%>
 
 
+<form action="storage" method="post">
+    <label>name</label>
+    <input type="text" name="name"/><br/>
+    <label>address</label>
+    <input type="text" name="address"/><br/>
+    <label>capacity</label>
+    <input type="number" name="capacity"/><br/>
+    <label>available capacity</label>
+    <input type="number" name="availableCapacity"/><br/>
+   <%-- <label>Select Items</label>
+    <select name="itemIds" multiple>
+        <c:forEach items="${items}" var="item">
+            <option value="${item.id}">${item.name}</option>
+        </c:forEach>
+    </select>--%>
+    <input type="submit" value="Save"/>
+</form>
 
+<form action="storage" method="GET">
+    <input type="submit" value="List Storage">
+</form>
 
 
 

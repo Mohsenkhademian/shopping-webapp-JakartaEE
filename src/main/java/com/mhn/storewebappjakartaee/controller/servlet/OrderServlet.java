@@ -50,7 +50,7 @@ public class OrderServlet extends HttpServlet {
             response.sendRedirect("orders");
         } catch (Exception e) {
             request.setAttribute("message", "Error saving order: " + e.getMessage());
-            request.getRequestDispatcher("/error.jsp").forward(request, response);
+            request.getRequestDispatcher("error.jsp").forward(request, response);
         }
 
         request.setAttribute("order", order);
