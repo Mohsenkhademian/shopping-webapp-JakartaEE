@@ -5,11 +5,18 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<form action="/comment" method="PUT">
-    <input type="text" name="userId" placeholder="Enter userId :"><br><br>
-<%--    <input type="text" name="username" placeholder="Enter UserName :"><br><br>--%>
-    <input type="text" name="text" placeholder="Enter text :"><br><br>
-    <input type="submit">
+<form action="user" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Save User">
+</form>
+
+<form action="user" method="GET">
+    <input type="submit" value="List Users">
 </form>
 
 </body>

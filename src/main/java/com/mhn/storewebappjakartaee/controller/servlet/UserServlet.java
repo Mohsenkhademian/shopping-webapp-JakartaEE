@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/user")
 public class UserServlet extends HttpServlet {
@@ -18,26 +19,30 @@ public class UserServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         User user = User.builder().userName(username).password(password).build();
+        user.setPassword(password);
         try {
             UserService.getUserService().save(user);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        resp.sendRedirect("index.jsp");
+        req.setAttribute("message", "User saved successfully!");
+        req.getRequestDispatcher("user.jsp").forward(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String userId = req.getParameter("id");
-        User user = null;
+        List<User> users = null;
         try {
-            user = UserService.getUserService().findById(Long.parseLong(userId));
+            users = UserService.getUserService().findAll();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        req.setAttribute("user", user);
+        req.setAttribute("users", users);
         req.getRequestDispatcher("user.jsp").forward(req, resp);
     }
+
+
+
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
