@@ -23,6 +23,7 @@
 
 
 
+<%--
 
 <form action="delivery" method="POST">
     <label>Order ID:</label>
@@ -54,7 +55,29 @@
     <input type="submit" value="List Delivery">
 </form>
 
+--%>
 
+
+
+<form action="item" method="post">
+    <label>Order Id:</label>
+    <input type="text" name="orderId"/><br/>
+    <label>Storage Id:</label>
+    <input type="text" name="storageId"/><br/>
+    <label>Offer Id:</label>
+    <input type="text" name="offerId"/><br/>
+    <label>Name:</label>
+    <input type="text" name="name"/><br/>
+    <label>Description:</label>
+    <input type="text" name="description"/><br/>
+    <label>Price:</label>
+    <input type="text" name="price"/><br/>
+    <input type="submit" value="Save"/>
+</form>
+
+<form action="item" method="GET">
+    <input type="submit" value="List Items">
+</form>
 
 
 
