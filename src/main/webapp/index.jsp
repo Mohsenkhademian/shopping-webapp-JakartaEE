@@ -5,9 +5,10 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
+<%--
 <form action="customer" method="POST">
-    <%--<label for="name">Name:</label>
-    <input type="text" id="names" name="name"><br><br>--%>
+    &lt;%&ndash;<label for="name">Name:</label>
+    <input type="text" id="names" name="name"><br><br>&ndash;%&gt;
     <label for="name">name:</label>
     <input type="text" id="name" name="name"><br><br>
     <label for="email">email:</label>
@@ -18,6 +19,53 @@
 <form action="customer" method="GET">
     <input type="submit" value="List Users">
 </form>
+--%>
+
+
+
+
+<form action="delivery" method="POST">
+    <label>Order ID:</label>
+    <input type="text" name="orderId"/><br/>
+
+    <label>Recipient Name:</label>
+    <input type="text" name="recipientName"/><br/>
+
+    <label>Recipient Address:</label>
+    <input type="text" name="recipientAddress"/><br/>
+
+    <label>Delivery Status:</label>
+    <input type="checkbox" name="deliveryStatus"/><br/>
+
+    <label>Delivery Date:</label>
+    <input type="date" name="deliveryDate"/><br/>
+
+    <label>Select Items</label>
+    <select name="itemIds" multiple>
+        <c:forEach items="${items}" var="item">
+            <option value="${item.id}">${item.name}</option>
+        </c:forEach>
+    </select>
+
+
+    <button type="submit">Save</button>
+</form>
+<form action="delivery" method="GET">
+    <input type="submit" value="List Delivery">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
