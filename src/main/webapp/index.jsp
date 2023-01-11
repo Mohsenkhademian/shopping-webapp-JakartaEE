@@ -5,7 +5,7 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<form action="user" method="POST">
+<form action="admin" method="POST">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name"><br><br>
     <label for="username">Username:</label>
@@ -15,7 +15,7 @@
     <input type="submit" value="Save User">
 </form>
 
-<form action="user" method="GET">
+<form action="admin" method="GET">
     <input type="submit" value="List Users">
 </form>
 

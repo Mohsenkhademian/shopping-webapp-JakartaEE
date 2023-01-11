@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/admin")
 public class AdminServlet extends HttpServlet {
@@ -24,20 +25,20 @@ public class AdminServlet extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        resp.sendRedirect("index.jsp");
+        req.setAttribute("message", "User saved successfully!");
+        req.getRequestDispatcher("user.jsp").forward(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String adminId = req.getParameter("id");
-        Admin admin = null;
+        List<Admin> admins = null;
         try {
-            admin = AdminService.getAdminService().findById(Long.parseLong(adminId));
+            admins = AdminService.getAdminService().findAll();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        req.setAttribute("admin", admin);
-        req.getRequestDispatcher("admin.jsp").forward(req, resp);
+        req.setAttribute("admins", admins);
+        req.getRequestDispatcher("user.jsp").forward(req, resp);
     }
 
     @Override
