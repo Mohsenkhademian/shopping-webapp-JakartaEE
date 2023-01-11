@@ -97,6 +97,7 @@
     <input type="submit" value="List Offers">
 </form>--%>
 
+<%--
 
 <form action="order" method="post">
     <label>Customer Id:</label>
@@ -119,6 +120,35 @@
 <form action="order" method="GET">
     <input type="submit" value="List Order">
 </form>
+--%>
+
+
+
+
+
+
+<form action="paymenttransaction" method="post">
+    <label>Amount:</label>
+    <input type="text" name="amount"/><br/>
+    <label>Transaction Time:</label>
+    <input type="date" name="transactionTime"/><br/>
+    <label>Account Number:</label>
+    <input type="text" name="accountNumber"/><br/>
+    <label>CVV2:</label>
+    <input type="text" name="cvv2"/><br/>
+    <label>Card Expiration Date:</label>
+    <input type="date" name="cardExpirationDate"/><br/>
+    <label>Customer Id:</label>
+    <input type="text" name="customerId"/><br/>
+    <label>Order Id:</label>
+    <input type="text" name="orderId"/><br/>
+    <input type="submit" value="Submit"/>
+</form>
+
+<form action="paymenttransaction" method="GET">
+    <input type="submit" value="List PaymentTransaction">
+</form>
+
 
 
 

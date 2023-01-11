@@ -28,6 +28,15 @@ public class PaymentTransaction extends BaseEntity {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
+    @Column(name = "c_accountnumber")
+    private String accountNumber;
+
+    @Column(name = "c_cvv2")
+    private int cvv2;
+
+    @Column(name = "c_cardexpirationdate")
+    private LocalDate cardExpirationDate;
+
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;
