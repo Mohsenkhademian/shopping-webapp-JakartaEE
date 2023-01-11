@@ -25,7 +25,7 @@ public class AdminServlet extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        req.setAttribute("message", "User saved successfully!");
+        req.setAttribute("message", "Comment saved successfully!");
         req.getRequestDispatcher("user.jsp").forward(req, resp);
     }
 

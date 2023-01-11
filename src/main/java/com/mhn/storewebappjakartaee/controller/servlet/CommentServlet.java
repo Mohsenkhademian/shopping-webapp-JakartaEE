@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/comment")
 public class CommentServlet extends HttpServlet {
@@ -25,20 +26,20 @@ public class CommentServlet extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        resp.sendRedirect("index.jsp");
+        req.setAttribute("message", "Comment saved successfully!");
+        req.getRequestDispatcher("user.jsp").forward(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String commentId = req.getParameter("id");
-        Comment comment = null;
+        List<Comment> comments = null;
         try {
-            comment = CommentService.getCommentService().findById(Long.parseLong(commentId));
+            comments = CommentService.getCommentService().findAll();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        req.setAttribute("comment", comment);
-        req.getRequestDispatcher("comment.jsp").forward(req, resp);
+        req.setAttribute("comments", comments);
+        req.getRequestDispatcher("user.jsp").forward(req, resp);
     }
 
     @Override
