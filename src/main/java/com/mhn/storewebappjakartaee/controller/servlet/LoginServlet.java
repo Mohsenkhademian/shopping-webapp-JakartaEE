@@ -22,6 +22,7 @@ public class LoginServlet extends HttpServlet {
             if (user != null) {
                 HttpSession session = req.getSession();
                 session.setAttribute("username", user);
+                session.setAttribute("password", password);
                 session.setAttribute("validate", true);
                 req.getRequestDispatcher("index.jsp").forward(req, resp);
             } else {
