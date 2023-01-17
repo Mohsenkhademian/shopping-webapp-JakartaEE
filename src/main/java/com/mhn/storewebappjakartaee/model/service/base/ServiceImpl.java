@@ -15,4 +15,6 @@ public abstract class ServiceImpl <T, ID>{
 
     public abstract T findById(ID id) throws Exception;
 
+//    public abstract T findByUsernameAndPassword(String username , String password) throws Exception;
+
 }

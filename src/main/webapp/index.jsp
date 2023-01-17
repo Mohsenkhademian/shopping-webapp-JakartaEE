@@ -152,6 +152,7 @@
 --%>
 
 
+<%--
 <form action="storage" method="post">
     <label>name</label>
     <input type="text" name="name"/><br/>
@@ -161,20 +162,25 @@
     <input type="number" name="capacity"/><br/>
     <label>available capacity</label>
     <input type="number" name="availableCapacity"/><br/>
-   <%-- <label>Select Items</label>
+   &lt;%&ndash; <label>Select Items</label>
     <select name="itemIds" multiple>
         <c:forEach items="${items}" var="item">
             <option value="${item.id}">${item.name}</option>
         </c:forEach>
-    </select>--%>
+    </select>&ndash;%&gt;
     <input type="submit" value="Save"/>
 </form>
 
 <form action="storage" method="GET">
     <input type="submit" value="List Storage">
 </form>
+--%>
 
-
+<form action="/user" method="post">
+    <input type="text" name="username" placeholder="Enter UserName :"><br><br>
+    <input type="password" name="password" placeholder="Enter Password :"><br><br>
+    <input type="submit">
+</form>
 
 
 

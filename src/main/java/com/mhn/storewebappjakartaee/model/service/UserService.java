@@ -51,4 +51,12 @@ public class UserService extends ServiceImpl<User, Long> {
             return crudRepository.selectAll(User.class);
         }
     }
+
+    public User findByUsernameAndPassword(String username, String password) throws Exception {
+        try (CRUDRepository<User, Long> crudRepository = new CRUDRepository<>()) {
+            return crudRepository.findByUsernameAndPassword(User.class, username, password);
+        }
+    }
+
+
 }

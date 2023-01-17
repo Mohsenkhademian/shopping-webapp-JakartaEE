@@ -2,10 +2,7 @@ package com.mhn.storewebappjakartaee.model.repository;
 
 
 import com.mhn.storewebappjakartaee.model.utils.JPA;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Query;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -64,6 +61,19 @@ public class CRUDRepository<T, I> implements AutoCloseable {
         List<T> tList = query.getResultList();
         return tList;
     }
+
+    public <T> TypedQuery<T> createQuery(String query, Class<T> resultClass) {
+        return entityManager.createQuery(query, resultClass);
+    }
+
+    public T findByUsernameAndPassword(Class<T> tClass, String username, String password) {
+        entityManager = JPA.getJpa().getEntityManager();
+            TypedQuery<T> query = entityManager.createQuery("SELECT u FROM " + tClass.getName() + " u WHERE u.userName = :username and u.password = :password", tClass);
+            query.setParameter("username", username);
+            query.setParameter("password", password);
+            return query.getSingleResult();
+    }
+
 
     @Override
     public void close() throws Exception {
