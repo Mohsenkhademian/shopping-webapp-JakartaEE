@@ -2,12 +2,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<head>
+<%--<head>
     <title>HOME</title>
-    <c:if test="${sessionScope.username != null}">
-        <h1>Hello ${sessionScope.username.userName}</h1>
+    <c:if test="${sessionScope.email != null}">
+        <h1>Hello ${sessionScope.email.userName}</h1>
     </c:if>
-</head>
+</head>--%>
 <body>
 <%--
 <form action="customer" method="POST">
