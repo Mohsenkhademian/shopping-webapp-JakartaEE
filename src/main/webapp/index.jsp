@@ -4,14 +4,9 @@
 <html>
 <head>
     <title>HOME</title>
-    <%
-        User user = (User) session.getAttribute("username");
-        if(user != null) {
-    %>
-    <h1>Hello <%= user.getUserName() %></h1>
-    <%
-        }
-    %>
+    <c:if test="${sessionScope.username != null}">
+        <h1>Hello ${sessionScope.username.userName}</h1>
+    </c:if>
 </head>
 <body>
 <%--
