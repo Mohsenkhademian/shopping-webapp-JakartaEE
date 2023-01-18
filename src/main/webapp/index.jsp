@@ -2,12 +2,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<%--<head>
+<head>
     <title>HOME</title>
-    <c:if test="${sessionScope.email != null}">
-        <h1>Hello ${sessionScope.email.userName}</h1>
-    </c:if>
-</head>--%>
+</head>
 <body>
 <%--
 <form action="customer" method="POST">
@@ -156,7 +153,6 @@
 --%>
 
 
-<%--
 <form action="storage" method="post">
     <label>name</label>
     <input type="text" name="name"/><br/>
@@ -166,25 +162,21 @@
     <input type="number" name="capacity"/><br/>
     <label>available capacity</label>
     <input type="number" name="availableCapacity"/><br/>
-   &lt;%&ndash; <label>Select Items</label>
-    <select name="itemIds" multiple>
-        <c:forEach items="${items}" var="item">
-            <option value="${item.id}">${item.name}</option>
-        </c:forEach>
-    </select>&ndash;%&gt;
+
+
+
     <input type="submit" value="Save"/>
 </form>
 
 <form action="storage" method="GET">
     <input type="submit" value="List Storage">
 </form>
---%>
-
+<%--
 <form action="/user" method="post">
     <input type="text" name="username" placeholder="Enter UserName :"><br><br>
     <input type="password" name="password" placeholder="Enter Password :"><br><br>
     <input type="submit">
-</form>
+</form>--%>
 
 
 
