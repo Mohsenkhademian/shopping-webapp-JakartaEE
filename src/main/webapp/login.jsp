@@ -17,7 +17,7 @@
 </head>
 <body>
 <form action="/login" method="post">
-<input type="text" required name="username" placeholder="Enter UserName :"><br><br>
+<input type="email" required name="email" placeholder="Enter Email :"><br><br>
 <input type="password" required name="password" placeholder="Enter Password :"><br><br>
     <input type="submit" name="" value="login">
 </form>

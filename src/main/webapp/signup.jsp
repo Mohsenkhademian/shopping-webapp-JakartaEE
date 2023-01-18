@@ -7,6 +7,7 @@
 <body>
 <form action="/signup" method="post">
     <input type="text" name="username" required placeholder="Enter UserName :"><br><br>
+    <input type="email" name="email" required placeholder="Enter Email :"><br><br>
     <input type="password" required name="password" placeholder="Enter Password :"><br><br>
     <input type="submit" value="signup">
 </form>

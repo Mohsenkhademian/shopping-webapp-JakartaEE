@@ -52,9 +52,15 @@ public class UserService extends ServiceImpl<User, Long> {
         }
     }
 
-    public User findByUsernameAndPassword(String username, String password) throws Exception {
+    public User findByUsernameAndPassword(String username, String email,String password) throws Exception {
         try (CRUDRepository<User, Long> crudRepository = new CRUDRepository<>()) {
-            return crudRepository.findByUsernameAndPassword(User.class, username, password);
+            return crudRepository.findByUsernameAndPassword(User.class, username,email, password);
+        }
+    }
+
+    public User findByEmailAndPassword(String email , String password) throws Exception{
+        try (CRUDRepository<User , Long> crudRepository = new CRUDRepository<>()){
+            return crudRepository.findByEmailAndPassword(User.class, email , password);
         }
     }
 

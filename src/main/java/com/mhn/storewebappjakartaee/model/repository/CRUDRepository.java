@@ -66,13 +66,24 @@ public class CRUDRepository<T, I> implements AutoCloseable {
         return entityManager.createQuery(query, resultClass);
     }
 
-    public T findByUsernameAndPassword(Class<T> tClass, String username, String password) {
+    public T findByUsernameAndPassword(Class<T> tClass, String username, String email, String password) {
         entityManager = JPA.getJpa().getEntityManager();
-            TypedQuery<T> query = entityManager.createQuery("SELECT u FROM " + tClass.getName() + " u WHERE u.userName = :username and u.password = :password", tClass);
-            query.setParameter("username", username);
-            query.setParameter("password", password);
-            return query.getSingleResult();
+        TypedQuery<T> query = entityManager.createQuery("SELECT u FROM " + tClass.getName() + " u WHERE u.userName = :username and u.email = :email and u.password = :password", tClass);
+        query.setParameter("username", username);
+        query.setParameter("email", email);
+        query.setParameter("password", password);
+        return query.getSingleResult();
     }
+
+    public T findByEmailAndPassword(Class<T> tClass, String email, String password) {
+        entityManager = JPA.getJpa().getEntityManager();
+        TypedQuery<T> query = entityManager.createQuery("SELECT u FROM " + tClass.getName() + " u WHERE u.email = :email and u.password = :password", tClass);
+        query.setParameter("email", email);
+        query.setParameter("password", password);
+        return query.getSingleResult();
+    }
+
+
 
 
     @Override
