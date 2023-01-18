@@ -1,8 +1,17 @@
+<%@ page import="com.mhn.storewebappjakartaee.model.entity.User" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>HOME</title>
+    <%
+        User user = (User) session.getAttribute("username");
+        if(user != null) {
+    %>
+    <h1>Hello <%= user.getUserName() %></h1>
+    <%
+        }
+    %>
 </head>
 <body>
 <%--
