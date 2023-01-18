@@ -15,10 +15,8 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-//        User user = userService.findByUsernameAndPassword(username, password);
-        User user = null;
         try {
-            user = UserService.getUserService().findByUsernameAndPassword(username, password);
+            User user = UserService.getUserService().findByUsernameAndPassword(username, password);
             if (user != null) {
                 HttpSession session = req.getSession();
                 session.setAttribute("username", user);
@@ -31,7 +29,7 @@ public class LoginServlet extends HttpServlet {
                 resp.sendRedirect("login.jsp");
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            resp.sendRedirect("login.jsp?error=Invalid username or password");
         }
     }
 }
