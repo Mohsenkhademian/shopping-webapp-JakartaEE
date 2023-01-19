@@ -163,7 +163,10 @@
     <label>available capacity</label>
     <input type="number" name="availableCapacity"/><br/>
 
-
+    <label>Select Items</label>
+    <c:forEach items="${items}" var="item">
+        <input type="checkbox" name="itemIds" value="${item.id}"> ${item.name}<br>
+    </c:forEach>
 
     <input type="submit" value="Save"/>
 </form>

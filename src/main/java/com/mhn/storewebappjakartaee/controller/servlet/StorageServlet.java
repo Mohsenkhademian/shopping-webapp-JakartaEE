@@ -24,6 +24,7 @@ public class StorageServlet extends HttpServlet {
         String address = req.getParameter("address");
         int capacity = Integer.parseInt(req.getParameter("capacity"));
         int availableCapacity = Integer.parseInt(req.getParameter("availableCapacity"));
+        String[] itemIds = req.getParameterValues("itemIds");
         /*String[] itemIds = req.getParameter("itemIds").split(",");
         List<Item> items = new ArrayList<>();
         for (String id : itemIds) {
