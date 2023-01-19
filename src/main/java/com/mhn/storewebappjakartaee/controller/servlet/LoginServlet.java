@@ -29,7 +29,11 @@ public class LoginServlet extends HttpServlet {
                 resp.sendRedirect("login.jsp");
             }
         } catch (Exception e) {
-            resp.sendRedirect("login.jsp?error=Invalid email or password");
+            HttpSession session = req.getSession();
+            session.setAttribute("error", "Invalid email or password , please refresh this page");
+            resp.sendRedirect("login.jsp");
+//            resp.sendRedirect("login.jsp?error=Invalid email or password");
+
         }
     }
 }

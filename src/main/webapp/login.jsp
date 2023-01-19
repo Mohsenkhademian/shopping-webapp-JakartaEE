@@ -77,8 +77,8 @@
     }
 
     <%
-        String error = request.getParameter("error");
-        if(error != null && error.equals("Invalid email or password")) {
+        String error = (String) session.getAttribute("error");
+        if (error != null) {
     %>
     showErrorModal("<%= error %>");
     <%
@@ -90,14 +90,17 @@
     // When the user clicks the close button, hide the modal
     closeButton.onclick = function() {
         modal.style.display = "none";
+        <% session.removeAttribute("error"); %>
     }
 
     // When the user clicks anywhere outside of the modal, hide it
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            <% session.removeAttribute("error"); %>
         }
     }
 </script>
+
 </body>
 </html>
