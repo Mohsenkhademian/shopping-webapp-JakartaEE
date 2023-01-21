@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,13 +16,30 @@ import java.util.List;
 public class ItemServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        long orderId = Long.parseLong(request.getParameter("orderId"));
-        long storageId = Long.parseLong(request.getParameter("storageId"));
-        long offerId = Long.parseLong(request.getParameter("offerId"));
+        // Retrieve the values of the form fields
+        long orderId = request.getParameter("orderId") != null ? Long.parseLong(request.getParameter("orderId")) : 0;
+        long storageId = request.getParameter("storageId") != null ? Long.parseLong(request.getParameter("storageId")) : 0;
+        long offerId = request.getParameter("offerId") != null ? Long.parseLong(request.getParameter("offerId")) : 0;
+
         String name = request.getParameter("name");
         String description = request.getParameter("description");
-        double price = Double.parseDouble(request.getParameter("price"));
+        int price = 0;
+        String priceString = request.getParameter("price");
+        if (priceString != null) {
+            price = Integer.valueOf(priceString);
+        }
 
+
+        // Handle the uploaded image file
+        Part filePart = request.getPart("photo");
+        byte[] itemPhoto = new byte[0];
+        if (filePart != null && filePart.getSize() > 0) {
+            itemPhoto = new byte[(int) filePart.getSize()];
+            filePart.getInputStream().read(itemPhoto);
+        }
+
+
+        // Create a new Item object
         Item item = Item.builder()
                 .orderId(orderId)
                 .storageId(storageId)
@@ -29,6 +47,7 @@ public class ItemServlet extends HttpServlet {
                 .name(name)
                 .description(description)
                 .price(price)
+                .itemPhoto(itemPhoto)
                 .build();
         try {
             Item savedItem = ItemService.getItemService().save(item);

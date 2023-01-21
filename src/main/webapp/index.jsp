@@ -58,30 +58,37 @@
 
 --%>
 
-
-<%--
-
-<form action="item" method="post">
-    <label>Order Id:</label>
-    <input type="text" name="orderId"/><br/>
-    <label>Storage Id:</label>
-    <input type="text" name="storageId"/><br/>
-    <label>Offer Id:</label>
-    <input type="text" name="offerId"/><br/>
-    <label>Name:</label>
-    <input type="text" name="name"/><br/>
-    <label>Description:</label>
-    <input type="text" name="description"/><br/>
-    <label>Price:</label>
-    <input type="text" name="price"/><br/>
-    <input type="submit" value="Save"/>
+<form action="item" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="orderId">Order ID:</label>
+        <input type="number" class="form-control" id="orderId" name="orderId" required>
+    </div>
+    <div class="form-group">
+        <label for="storageId">Storage ID:</label>
+        <input type="number" class="form-control" id="storageId" name="storageId" required>
+    </div>
+    <div class="form-group">
+        <label for="offerId">Offer ID:</label>
+        <input type="number" class="form-control" id="offerId" name="offerId" required>
+    </div>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="description" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" class="form-control" id="price" name="price" required>
+    </div>
+    <div class="form-group">
+        <label for="photo">Photo:</label>
+        <input type="file" class="form-control-file" id="photo" name="photo" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
 </form>
-
-<form action="item" method="GET">
-    <input type="submit" value="List Items">
-</form>
---%>
-
 
 
 
@@ -151,7 +158,7 @@
     <input type="submit" value="List PaymentTransaction">
 </form>
 --%>
-
+<%--
 
 <form action="storage" method="post">
     <label>name</label>
@@ -174,6 +181,9 @@
 <form action="storage" method="GET">
     <input type="submit" value="List Storage">
 </form>
+--%>
+
+
 <%--
 <form action="/user" method="post">
     <input type="text" name="username" placeholder="Enter UserName :"><br><br>

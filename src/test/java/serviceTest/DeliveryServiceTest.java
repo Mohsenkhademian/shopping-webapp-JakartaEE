@@ -112,7 +112,7 @@ public class DeliveryServiceTest {
         Delivery delivery1 = Delivery.builder()
                 .orderId(1L)
                 .items(Arrays.asList(
-                        Item.builder().price(10.5).offerId(1L).name("Item 1").build()
+                        Item.builder().price(10).offerId(1L).name("Item 1").build()
                 ))
                 .recipientName("John Smith")
                 .recipientAddress("123 Main Street")
@@ -122,7 +122,7 @@ public class DeliveryServiceTest {
         Delivery delivery2 = Delivery.builder()
                 .orderId(2L)
                 .items(Arrays.asList(
-                        Item.builder().price(30.0).offerId(2L).name("Item 2").build()
+                        Item.builder().price(30).offerId(2L).name("Item 2").build()
                         ))
                 .recipientName("Mohsen Khademian")
                 .recipientAddress("Tehran")

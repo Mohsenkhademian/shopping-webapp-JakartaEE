@@ -2,30 +2,39 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>storage</title>
+    <title>Storage Details</title>
 </head>
 <body>
-welcome to storage page
-<table border="1" bgcolor="aqua">
+<h1>Storage Details</h1>
+<table>
     <tr>
-        <th>Id</th>
         <th>Name</th>
         <th>Address</th>
         <th>Capacity</th>
         <th>Available Capacity</th>
-        <th>Item List</th>
     </tr>
-    <c:forEach storages="${storages}" var="storage">
+    <tr>
+        <td>${storage.name}</td>
+        <td>${storage.address}</td>
+        <td>${storage.capacity}</td>
+        <td>${storage.availableCapacity}</td>
+    </tr>
+</table>
+<h2>Items</h2>
+<table>
+    <tr>
+        <th>Order ID</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    <c:forEach var="item" items="${storage.items}">
         <tr>
-            <td>${storage.id}</td>
-            <td>${storage.name}</td>
-            <td>${storage.address}</td>
-            <td>${storage.capacity}</td>
-            <td>${storage.availableCapacity}</td>
-            <td>${storage.items}</td>
+            <td>${item.orderId}</td>
+            <td>${item.productName}</td>
+            <td>${item.description}</td>
+            <td>${item.price}</td>
         </tr>
     </c:forEach>
 </table>
-
 </body>
-</html>

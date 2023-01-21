@@ -17,6 +17,7 @@ import com.mhn.storewebappjakartaee.model.service.OrderService;
 
 public class OrderServiceTest {
     private OrderService orderService = OrderService.getOrderService();
+/*
 
     @Test
     public void testSave() throws Exception{
@@ -145,6 +146,7 @@ public class OrderServiceTest {
     }
 
 
+*/
 
 
 

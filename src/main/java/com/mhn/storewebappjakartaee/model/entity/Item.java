@@ -32,6 +32,11 @@ public class Item extends BaseEntity {
     private String description;
 
     @Column(name = "c_price")
-    private double price;
+    private int price;
+
+    @Lob
+    @Column(name = "c_item_photo")
+    private byte[] itemPhoto;
+
 
 }

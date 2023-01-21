@@ -21,7 +21,7 @@ public class ItemServiceTest {
         item.setOfferId(3L);
         item.setName("Test Item");
         item.setDescription("This is a test item.");
-        item.setPrice(9.99);
+        item.setPrice(9);
         item = itemService.save(item);
         assertNotNull(item.getId());
     }
@@ -34,7 +34,7 @@ public class ItemServiceTest {
         item.setOfferId(3L);
         item.setName("Test Item");
         item.setDescription("This is a test item.");
-        item.setPrice(9.99);
+        item.setPrice(9);
         item = itemService.save(item);
         assertNotNull(item.getId());
         itemService.delete(item.getId());
@@ -50,16 +50,16 @@ public class ItemServiceTest {
         item.setOfferId(3L);
         item.setName("Test Item");
         item.setDescription("This is a test item.");
-        item.setPrice(9.99);
+        item.setPrice(9);
         item = itemService.save(item);
         assertNotNull(item.getId());
         item.setName("Updated Test Item");
         item.setDescription("This is an updated test item.");
-        item.setPrice(12.99);
+        item.setPrice(12);
         item = itemService.update(item);
         assertEquals("Updated Test Item", item.getName());
         assertEquals("This is an updated test item.", item.getDescription());
-        assertEquals(12.99, item.getPrice());
+        assertEquals(12, item.getPrice());
     }
 
     @Test
@@ -70,14 +70,14 @@ public class ItemServiceTest {
         item1.setOfferId(3L);
         item1.setName("Test Item 1");
         item1.setDescription("This is a test item 1.");
-        item1.setPrice(9.99);
+        item1.setPrice(9);
         Item item2 = new Item();
         item2.setOrderId(1L);
         item2.setStorageId(2L);
         item2.setOfferId(3L);
         item2.setName("Test Item 2");
         item2.setDescription("This is a test item 2.");
-        item2.setPrice(19.99);
+        item2.setPrice(19);
         itemService.save(item1);
         itemService.save(item2);
         List<Item> items = itemService.findAll();
@@ -92,7 +92,7 @@ public class ItemServiceTest {
         item.setOfferId(3L);
         item.setName("Test Item");
         item.setDescription("This is a test item.");
-        item.setPrice(9.99);
+        item.setPrice(9);
         item = itemService.save(item);
         assertNotNull(item.getId());
         Item foundItem = itemService.findById(item.getId());
