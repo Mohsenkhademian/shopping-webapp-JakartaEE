@@ -17,33 +17,18 @@ public class ItemServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Retrieve the values of the form fields
-        long orderId = request.getParameter("orderId") != null ? Long.parseLong(request.getParameter("orderId")) : 0;
-        long storageId = request.getParameter("storageId") != null ? Long.parseLong(request.getParameter("storageId")) : 0;
-        long offerId = request.getParameter("offerId") != null ? Long.parseLong(request.getParameter("offerId")) : 0;
-
         String name = request.getParameter("name");
         String description = request.getParameter("description");
-        int price = 0;
-        String priceString = request.getParameter("price");
-        if (priceString != null) {
-            price = Integer.valueOf(priceString);
-        }
-
+        int price = Integer.valueOf(request.getParameter("price"));
 
         // Handle the uploaded image file
         Part filePart = request.getPart("photo");
-        byte[] itemPhoto = new byte[0];
-        if (filePart != null && filePart.getSize() > 0) {
-            itemPhoto = new byte[(int) filePart.getSize()];
-            filePart.getInputStream().read(itemPhoto);
-        }
+        byte[] itemPhoto = new byte[(int) filePart.getSize()];
+        filePart.getInputStream().read(itemPhoto);
 
 
         // Create a new Item object
         Item item = Item.builder()
-                .orderId(orderId)
-                .storageId(storageId)
-                .offerId(offerId)
                 .name(name)
                 .description(description)
                 .price(price)

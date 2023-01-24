@@ -24,27 +24,14 @@ public class OrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Order order = null;
         try {
-            long customerId = Long.parseLong(request.getParameter("customerId"));
             String customerName = request.getParameter("customerName");
             String customerAddress = request.getParameter("customerAddress");
             LocalDate orderDate = LocalDate.parse(request.getParameter("orderDate"));
-            String[] itemIds = request.getParameter("itemIds").split(",");
-            List<Item> items = new ArrayList<>();
-            for (String id : itemIds) {
-                Item item = null;
-                try {
-                    item = ItemService.getItemService().findById(Long.parseLong(id));
-                } catch (Exception e) {
-                    request.setAttribute("message", "Error saving item: " + e.getMessage());
-                }
-                items.add(item);
-            }
+
             order = Order.builder()
-                    .customerId(customerId)
                     .customerName(customerName)
                     .customerAddress(customerAddress)
                     .orderDate(orderDate)
-                    .items(items)
                     .build();
             OrderService.getOrderService().save(order);
             response.sendRedirect("orders");

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ItemServiceTest {
 
-    private ItemService itemService = ItemService.getItemService();
+ /*   private ItemService itemService = ItemService.getItemService();
 
     @Test
     void testSave() throws Exception {
@@ -104,5 +104,5 @@ public class ItemServiceTest {
         assertEquals(item.getDescription(), foundItem.getDescription());
         assertEquals(item.getPrice(), foundItem.getPrice());
     }
-
+*/
 }

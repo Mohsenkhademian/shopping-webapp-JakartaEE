@@ -18,9 +18,8 @@ import java.util.List;
 public class CommentServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        long userId = Long.parseLong(req.getParameter("userId"));
         String text = req.getParameter("text");
-        Comment comment = Comment.builder().userId(userId).text(text).build();
+        Comment comment = Comment.builder().text(text).build();
         try {
             CommentService.getCommentService().save(comment);
         } catch (Exception e) {

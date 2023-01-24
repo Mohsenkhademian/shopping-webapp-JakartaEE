@@ -59,35 +59,19 @@
 --%>
 
 <form action="item" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label for="orderId">Order ID:</label>
-        <input type="number" class="form-control" id="orderId" name="orderId" required>
-    </div>
-    <div class="form-group">
-        <label for="storageId">Storage ID:</label>
-        <input type="number" class="form-control" id="storageId" name="storageId" required>
-    </div>
-    <div class="form-group">
-        <label for="offerId">Offer ID:</label>
-        <input type="number" class="form-control" id="offerId" name="offerId" required>
-    </div>
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-    </div>
-    <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea class="form-control" id="description" name="description" required></textarea>
-    </div>
-    <div class="form-group">
-        <label for="price">Price:</label>
-        <input type="number" class="form-control" id="price" name="price" required>
-    </div>
-    <div class="form-group">
-        <label for="photo">Photo:</label>
-        <input type="file" class="form-control-file" id="photo" name="photo" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Save</button>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" required>
+    <br>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required>
+    <br>
+    <label for="itemPhoto">Item Photo:</label>
+    <input type="file" id="itemPhoto" name="itemPhoto" required>
+    <br>
+    <input type="submit" value="Submit">
 </form>
 
 

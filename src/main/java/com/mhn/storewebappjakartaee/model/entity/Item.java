@@ -16,14 +16,17 @@ import java.util.List;
 @Table(name = "t_item")
 public class Item extends BaseEntity {
 
-    @JoinColumn(name = "order_id")
-    private long orderId;
+    @ManyToMany(mappedBy = "items")
+    private List<Order> orders;
 
+    @ManyToOne
     @JoinColumn(name = "storage_id")
-    private long storageId;
+    private Storage storage;
 
+    @OneToOne
     @JoinColumn(name = "offer_id")
-    private long offerId;
+    private Offer offer;
+
 
     @Column(name = "c_name")
     private String name;
@@ -38,5 +41,6 @@ public class Item extends BaseEntity {
     @Column(name = "c_item_photo")
     private byte[] itemPhoto;
 
-
+    @ManyToMany(mappedBy = "items")
+    private List<Delivery> deliveries;
 }

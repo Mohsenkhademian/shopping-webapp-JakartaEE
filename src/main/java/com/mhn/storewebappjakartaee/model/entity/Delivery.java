@@ -16,10 +16,11 @@ import java.util.List;
 @Table(name = "t_delivery")
 public class Delivery extends BaseEntity {
 
+    @ManyToOne
     @JoinColumn(name = "order_id")
-    private long orderId;
+    private Order order;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "delivery_item",
             joinColumns = @JoinColumn(name = "delivery_id"),
             inverseJoinColumns = @JoinColumn(name = "item_id"))
@@ -36,6 +37,5 @@ public class Delivery extends BaseEntity {
     private Boolean deliveryStatus;
 
     @Column(name = "c_deliverydate")
-//    @Temporal(TemporalType.DATE)
     private LocalDate deliveryDate;
 }

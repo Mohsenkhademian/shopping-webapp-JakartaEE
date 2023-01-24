@@ -19,8 +19,9 @@ import java.util.List;
 @Table(name = "t_order")
 public class Order extends BaseEntity {
 
+    @ManyToOne
     @JoinColumn(name = "customer_id")
-    private long customerId;
+    private Customer customer;
 
     @Column(name = "c_customername")
     private String customerName;
@@ -29,11 +30,19 @@ public class Order extends BaseEntity {
     private String customerAddress;
 
     @Column(name = "c_orderdate")
-//    @Temporal(TemporalType.DATE)
     private LocalDate orderDate;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "t_order_item",
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "item_id"))
+    private List<Item> items;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "order_id")
-    private List<Item> items;
+    private List<Delivery> deliveries;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "order_id")
+    private List<PaymentTransaction> paymentTransactions;
 }

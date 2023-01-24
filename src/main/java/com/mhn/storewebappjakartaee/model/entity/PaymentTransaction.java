@@ -18,15 +18,14 @@ import java.util.Date;
 public class PaymentTransaction extends BaseEntity {
 
     @Column(name = "c_amount")
-    private double amount;
+    private long amount;
 
     @Column(name = "c_transationtime")
-//    @Temporal(TemporalType.TIMESTAMP)
     private LocalDate transactionTime;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Column(name = "c_accountnumber")
     private String accountNumber;

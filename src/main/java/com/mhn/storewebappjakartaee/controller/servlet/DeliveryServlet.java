@@ -19,31 +19,16 @@ import java.util.List;
 public class DeliveryServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        long orderId = Long.parseLong(request.getParameter("orderId"));
         String recipientName = request.getParameter("recipientName");
         String recipientAddress = request.getParameter("recipientAddress");
         Boolean deliveryStatus = Boolean.parseBoolean(request.getParameter("deliveryStatus"));
         LocalDate deliveryDate = LocalDate.parse(request.getParameter("deliveryDate"));
 
-        String[] itemIds = request.getParameter("itemIds").split(",");
-        List<Item> items = new ArrayList<>();
-        for (String id : itemIds) {
-            Item item = null;
-            try {
-                item = ItemService.getItemService().findById(Long.parseLong(id));
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-            items.add(item);
-        }
-
         Delivery delivery = Delivery.builder()
-                .orderId(orderId)
                 .recipientName(recipientName)
                 .recipientAddress(recipientAddress)
                 .deliveryStatus(deliveryStatus)
                 .deliveryDate(deliveryDate)
-                .items(items)
                 .build();
         try {
             Delivery savedDelivery = DeliveryService.getDeliveryService().save(delivery);

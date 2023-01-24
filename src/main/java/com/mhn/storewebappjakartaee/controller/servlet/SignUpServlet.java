@@ -17,7 +17,7 @@ public class SignUpServlet extends HttpServlet {
         String username = req.getParameter("username");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        User user = new User(username,email,password);
+        User user = User.builder().userName(username).email(email).password(password).build();
         try {
             UserService.getUserService().save(user);
 //            resp.sendRedirect("/login");

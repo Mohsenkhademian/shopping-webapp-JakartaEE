@@ -24,27 +24,12 @@ public class StorageServlet extends HttpServlet {
         String address = req.getParameter("address");
         int capacity = Integer.parseInt(req.getParameter("capacity"));
         int availableCapacity = Integer.parseInt(req.getParameter("availableCapacity"));
-        String[] itemIds = req.getParameterValues("itemIds");
-
-        List<Item> items = new ArrayList<>();
-        if(itemIds != null) {
-            for (String itemId : itemIds) {
-                Item item = null;
-                try {
-                    item = ItemService.getItemService().findById(Long.parseLong(itemId));
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-                items.add(item);
-            }
-        }
 
         Storage storage = Storage.builder()
                 .name(name)
                 .address(address)
                 .capacity(capacity)
                 .availableCapacity(availableCapacity)
-//                .items(items)
                 .build();
         try {
             StorageService.getStorageService().save(storage);

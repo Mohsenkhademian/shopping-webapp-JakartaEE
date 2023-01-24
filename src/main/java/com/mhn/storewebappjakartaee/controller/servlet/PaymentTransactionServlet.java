@@ -20,33 +20,18 @@ import java.util.List;
 public class PaymentTransactionServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        double amount = Double.parseDouble(req.getParameter("amount"));
+        long amount = Long.parseLong(req.getParameter("amount"));
         LocalDate transactionTime = LocalDate.parse(req.getParameter("transactionTime"));
         String accountNumber = req.getParameter("accountNumber");
         int cvv2 = Integer.parseInt(req.getParameter("cvv2"));
         LocalDate cardExpirationDate = LocalDate.parse(req.getParameter("cardExpirationDate"));
-        CustomerService customerService = CustomerService.getCustomerService();
-        long customerId = Long.parseLong(req.getParameter("customerId"));
-        OrderService orderService = OrderService.getOrderService();
-        long orderId = Long.parseLong(req.getParameter("orderId"));
-        Customer customer;
-        Order order;
-        try {
-            customer = customerService.findById(customerId);
-            order = orderService.findById(orderId);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
 
         PaymentTransaction paymentTransaction = PaymentTransaction.builder()
                 .amount(amount)
                 .transactionTime(transactionTime)
-                .customer(customer)
                 .accountNumber(accountNumber)
                 .cvv2(cvv2)
                 .cardExpirationDate(cardExpirationDate)
-                .order(order)
                 .build();
 
         try {
