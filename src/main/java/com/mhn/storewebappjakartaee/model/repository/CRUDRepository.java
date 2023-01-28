@@ -5,6 +5,7 @@ import com.mhn.storewebappjakartaee.model.utils.JPA;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Map;
 
 public class CRUDRepository<T, I> implements AutoCloseable {
     private EntityManager entityManager;
@@ -53,14 +54,20 @@ public class CRUDRepository<T, I> implements AutoCloseable {
         return tList;
     }
 
-    public List<T> executeQuery(String queryName,List<Object> paramList) {
+    public List<T> executeQuery(String queryName, Map<String, Object> paramMap) {
         entityManager = JPA.getJpa().getEntityManager();
-        Query query =
-                entityManager
-                        .createNamedQuery(queryName);
+        Query query = entityManager.createNamedQuery(queryName);
+        for (Map.Entry<String, Object> param : paramMap.entrySet()) {
+            query.setParameter(param.getKey(), param.getValue());
+        }
         List<T> tList = query.getResultList();
-        return tList;
+        if (tList.size() == 0) {
+            return null;
+        } else {
+            return tList;
+        }
     }
+
 
     public <T> TypedQuery<T> createQuery(String query, Class<T> resultClass) {
         return entityManager.createQuery(query, resultClass);
