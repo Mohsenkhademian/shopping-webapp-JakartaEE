@@ -6,10 +6,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Getter
-@Setter
-@ToString
+
+@Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor

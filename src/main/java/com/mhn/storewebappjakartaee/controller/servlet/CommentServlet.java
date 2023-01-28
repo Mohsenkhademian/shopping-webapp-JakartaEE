@@ -49,7 +49,6 @@ public class CommentServlet extends HttpServlet {
         Comment comment = null;
         try {
             comment = CommentService.getCommentService().findById((Long.parseLong(commentId)));
-            comment.setUserId(Long.parseLong(userId));
             comment.setText(text);
             CommentService.getCommentService().update(comment);
         } catch (Exception e) {

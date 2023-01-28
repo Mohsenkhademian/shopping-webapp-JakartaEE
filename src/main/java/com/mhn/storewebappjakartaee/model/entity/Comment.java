@@ -3,19 +3,17 @@ package com.mhn.storewebappjakartaee.model.entity;
 import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Getter
-@Setter
-@ToString
+
+@Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
 @Entity(name = "commentEntity")
 @Table(name = "t_comment")
 public class Comment extends BaseEntity {
-
-    @JoinColumn(name = "user_id")
-    private long userId;
 
     @Column(name = "c_text")
     private String text;

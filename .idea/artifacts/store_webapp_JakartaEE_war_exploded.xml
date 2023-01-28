@@ -37,7 +37,14 @@
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.24" />
           <element id="library" level="project" name="Maven: jakarta.inject:jakarta.inject-api:2.0.1" />
           <element id="library" level="project" name="Maven: jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:1.2.3" />
-          <element id="library" level="project" name="Maven: jakarta.el:jakarta.el-api:3.0.2" />
+          <element id="library" level="project" name="Maven: jakarta.el:jakarta.el-api:3.0.3" />
+          <element id="library" level="project" name="Maven: org.glassfish:jakarta.el:3.0.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.14.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.14.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.14.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.14.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.14.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.14.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -18,7 +18,9 @@ public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        User user = User.builder().userName(username).password(password).build();
+        String email = req.getParameter("email");
+        String numberPhone = req.getParameter("numberPhone");
+        User user = User.builder().userName(username).email(email).numberPhone(numberPhone).password(password).build();
         user.setPassword(password);
         try {
             UserService.getUserService().save(user);

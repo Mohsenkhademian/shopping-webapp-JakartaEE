@@ -24,12 +24,9 @@
 
 
 
-<%--
+<%--  OK
 
 <form action="delivery" method="POST">
-    <label>Order ID:</label>
-    <input type="text" name="orderId"/><br/>
-
     <label>Recipient Name:</label>
     <input type="text" name="recipientName"/><br/>
 
@@ -42,21 +39,21 @@
     <label>Delivery Date:</label>
     <input type="date" name="deliveryDate"/><br/>
 
-    <label>Select Items</label>
-    <select name="itemIds" multiple>
-        <c:forEach items="${items}" var="item">
-            <option value="${item.id}">${item.name}</option>
-        </c:forEach>
-    </select>
-
-
     <button type="submit">Save</button>
 </form>
 <form action="delivery" method="GET">
     <input type="submit" value="List Delivery">
 </form>
-
 --%>
+
+
+
+
+
+
+
+
+
 
 <form action="item" method="post" enctype="multipart/form-data">
     <label for="name">Name:</label>
@@ -66,10 +63,10 @@
     <input type="text" id="description" name="description" required>
     <br>
     <label for="price">Price:</label>
-    <input type="number" id="price" name="price" required>
+    <input type="text" id="price" name="price" required>
     <br>
-    <label for="itemPhoto">Item Photo:</label>
-    <input type="file" id="itemPhoto" name="itemPhoto" required>
+    <label for="photo">Item Photo:</label>
+    <input type="file" id="photo" name="photo" required>
     <br>
     <input type="submit" value="Submit">
 </form>
@@ -89,30 +86,23 @@
     <input type="submit" value="List Offers">
 </form>--%>
 
-<%--
 
+
+<%--   OK
 <form action="order" method="post">
-    <label>Customer Id:</label>
-    <input type="text" name="customerId"/><br/>
     <label>Customer Name:</label>
     <input type="text" name="customerName"/><br/>
     <label>Customer Address:</label>
     <input type="text" name="customerAddress"/><br/>
     <label>Order Date:</label>
     <input type="date" name="orderDate"/><br/>
-    <label>Select Items</label>
-    <select name="itemIds" multiple>
-        <c:forEach items="${items}" var="item">
-            <option value="${item.id}">${item.name}</option>
-        </c:forEach>
-    </select>
+
     <input type="submit" value="Save"/>
 </form>
 
 <form action="order" method="GET">
     <input type="submit" value="List Order">
-</form>
---%>
+</form>--%>
 
 
 

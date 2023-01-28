@@ -9,7 +9,6 @@ hi orderssss
 <table>
     <tr>
         <th>Id</th>
-        <th>Customer Id</th>
         <th>Customer Name</th>
         <th>Customer Address</th>
         <th>Order Date</th>
@@ -18,7 +17,6 @@ hi orderssss
     <c:forEach orders="${orders}" var="order">
         <tr>
             <td>${order.id}</td>
-            <td>${order.customerId}</td>
             <td>${order.customerName}</td>
             <td>${order.customerAddress}</td>
             <td>${order.orderDate}</td>

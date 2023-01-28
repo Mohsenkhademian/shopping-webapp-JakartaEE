@@ -19,12 +19,10 @@ public class ItemServlet extends HttpServlet {
         // Retrieve the values of the form fields
         String name = request.getParameter("name");
         String description = request.getParameter("description");
-        int price = Integer.valueOf(request.getParameter("price"));
+        long price = Long.parseLong(request.getParameter("price"));
 
         // Handle the uploaded image file
-        Part filePart = request.getPart("photo");
-        byte[] itemPhoto = new byte[(int) filePart.getSize()];
-        filePart.getInputStream().read(itemPhoto);
+        String photo = request.getParameter("photo");
 
 
         // Create a new Item object
@@ -32,11 +30,11 @@ public class ItemServlet extends HttpServlet {
                 .name(name)
                 .description(description)
                 .price(price)
-                .itemPhoto(itemPhoto)
+                .itemPhoto(photo)
                 .build();
         try {
             Item savedItem = ItemService.getItemService().save(item);
-            request.setAttribute("message", "Item saved successfully with id: " + savedItem.getId());
+//            request.setAttribute("message", "Item saved successfully with id: " + savedItem.getId());
         } catch (Exception e) {
             request.setAttribute("message", "Error saving item: " + e.getMessage());
         }

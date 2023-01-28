@@ -3,12 +3,15 @@ package com.mhn.storewebappjakartaee.model.entity;
 import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import jakarta.persistence.FetchType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 
 import java.time.LocalDate;
 import java.util.List;
-@Getter
-@Setter
-@ToString
+@Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
@@ -16,11 +19,7 @@ import java.util.List;
 @Table(name = "t_delivery")
 public class Delivery extends BaseEntity {
 
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
-
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "delivery_item",
             joinColumns = @JoinColumn(name = "delivery_id"),
             inverseJoinColumns = @JoinColumn(name = "item_id"))
@@ -32,6 +31,9 @@ public class Delivery extends BaseEntity {
 
     @Column(name = "c_recipientaddress")
     private String recipientAddress;
+
+    @Column(name = "c_recipientnumberphone")
+    private String recipientNumberPhone;
 
     @Column(name = "c_deliverystatus")
     private Boolean deliveryStatus;

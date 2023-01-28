@@ -34,7 +34,7 @@ public class OrderServlet extends HttpServlet {
                     .orderDate(orderDate)
                     .build();
             OrderService.getOrderService().save(order);
-            response.sendRedirect("orders");
+//            response.sendRedirect("orders");
         } catch (Exception e) {
             request.setAttribute("message", "Error saving order: " + e.getMessage());
             request.getRequestDispatcher("error.jsp").forward(request, response);

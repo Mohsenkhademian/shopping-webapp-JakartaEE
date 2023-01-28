@@ -5,10 +5,11 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Getter
-@Setter
-@ToString
+
+@Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
@@ -24,6 +25,9 @@ public class User extends BaseEntity {
 
     @Column(name = "c_password")
     private String password;
+
+    @Column(name = "c_numberphone")
+    private String numberPhone;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")

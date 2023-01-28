@@ -23,12 +23,14 @@ public class DeliveryServlet extends HttpServlet {
         String recipientAddress = request.getParameter("recipientAddress");
         Boolean deliveryStatus = Boolean.parseBoolean(request.getParameter("deliveryStatus"));
         LocalDate deliveryDate = LocalDate.parse(request.getParameter("deliveryDate"));
+        String recipientNumberPhone = request.getParameter("recipientNumberPhone");
 
         Delivery delivery = Delivery.builder()
                 .recipientName(recipientName)
                 .recipientAddress(recipientAddress)
                 .deliveryStatus(deliveryStatus)
                 .deliveryDate(deliveryDate)
+                .recipientNumberPhone(recipientNumberPhone)
                 .build();
         try {
             Delivery savedDelivery = DeliveryService.getDeliveryService().save(delivery);
