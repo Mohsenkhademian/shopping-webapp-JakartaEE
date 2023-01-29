@@ -1,6 +1,6 @@
 .frmregister{
     width: 500px; /* set the width of the form as a percentage of the parent container */
-    margin: auto; /* center the form horizontally */
+    margin: 500px; /* center the form horizontally */
     padding: 20px 10px;
     margin-bottom: 20px;
 }
@@ -15,7 +15,8 @@
     margin-bottom: 10px;
     padding: 8px 5px;
     border: 1px solid gainsboro;
-   
+   margin: auto;
+    text-align: center;
 }
 #checkbx{
     width: 20px;
@@ -48,6 +49,8 @@ a{
 }
 
 #loadpage {
+    margin: 500px;
+    padding: 500px;
     width: 500px;
     display: flex; /* use flexbox */
     justify-content: center; /* center items horizontally */

@@ -29,7 +29,11 @@
 </head>
 <body>
 <!-- ----------------------mainpage--------------------------- -->
-<div id="loadpage">
+<div class="container-fluid">
+    <div class="row ">
+
+        <div class="col-4"></div>
+        <div id="loadpage" class="col-12 col-lg-4">
     <form class="frmregister" action="/signup" method="post">
         <h3>ثبت نام</h3>
         <label for="name">نام کاربری</label><i>*</i>
