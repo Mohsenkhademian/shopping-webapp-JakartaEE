@@ -1,5 +1,6 @@
 package com.mhn.storewebappjakartaee.model.entity;
 
+import com.google.gson.Gson;
 import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Builder
@@ -33,4 +35,8 @@ public class Admin extends BaseEntity {
     @JoinColumn(name = "admin_id")
     private List<Comment> comments;
 
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 }
