@@ -1,5 +1,6 @@
 package com.mhn.storewebappjakartaee.model.utils;
 
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

@@ -4,7 +4,9 @@ import com.mhn.storewebappjakartaee.model.entity.User;
 import com.mhn.storewebappjakartaee.model.repository.CRUDRepository;
 import com.mhn.storewebappjakartaee.model.service.base.ServiceImpl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class UserService extends ServiceImpl<User, Long> {
@@ -61,6 +63,15 @@ public class UserService extends ServiceImpl<User, Long> {
     public User findByEmailAndPassword(String email , String password) throws Exception{
         try (CRUDRepository<User , Long> crudRepository = new CRUDRepository<>()){
             return crudRepository.findByEmailAndPassword(User.class, email , password);
+        }
+    }
+
+    public List<User> findByUserName(String userName) throws Exception{
+        try (CRUDRepository<User , Long> crudRepository = new CRUDRepository<>()){
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("userName", userName);;
+            List<User> userList = crudRepository.executeQuery("Admin.findByUserName", paramMap);
+            return (userList!=null)?userList :null;
         }
     }
 
