@@ -29,9 +29,9 @@
 <body>
 <div class="container-fluid">
   <div class="row bg-dark p-4 navitm">
-    <h5 class="titr text-light">به سایت مبلمان و لوازم خانگی خوش آمدید.</h5>
+    <h5 class="titr text-light">به سایت فروشگاه لوازم خانگی خوش آمدید.</h5>
     <div class="col-2">
-      <span class="logoitm" href="#">مبلمان و لوازم خانگی</span>
+      <span class="logoitm" href="#">فروشگاه لوازم خانگی</span>
     </div>
     <div class="col-1">
       <a href="homepage.jsp">صفحه اصلی</a>
@@ -132,13 +132,15 @@
           </a>
         </li>
         <li>
-          <a class="nav-link text-dark" href="#"
+          <a class="nav-link text-dark" href="signup.jsp"
           ><span class="fas fa-shopping-basket"></span
           ></a>
         </li>
       </ul>
     </div>
+  </nav>
 </div>
+
 </div>
 </nav>
 </div>
@@ -188,7 +190,7 @@
         <div>
           <h3>تلویزیون</h3>
           <p>21,600,000 تومان</p>
-          <button type="button">
+          <button type="button" onclick="window.location.href='order.jsp'">
             افزودن به سبد خرید
             <span class="fas fa-shopping-basket"></span>
           </button>
@@ -201,7 +203,7 @@
         <div>
           <h3>دستگاه اسپرسوساز</h3>
           <p>9,500,000 تومان</p>
-          <button type="button">
+          <button type="button" onclick="window.location.href='order.jsp'">
             افزودن به سبد خرید
             <span class="fas fa-shopping-basket"></span>
           </button>
@@ -213,7 +215,7 @@
       <div>
         <h3>دستگاه آبمیوه گیری</h3>
         <p>12,000,000 تومان</p>
-        <button type="button">
+        <button type="button" onclick="window.location.href='order.jsp'">
           افزودن به سبد خرید
           <span class="fas fa-shopping-basket"></span>
         </button>
@@ -225,7 +227,7 @@
         <div>
           <h3>ماشین لباسشویی</h3>
           <p>17,500,000 تومان</p>
-          <button type="button">
+          <button type="button" onclick="window.location.href='order.jsp'">
             افزودن به سبد خرید
             <span class="fas fa-shopping-basket"></span>
           </button>
@@ -252,7 +254,7 @@
         <div>
           <h3>تلویزیون</h3>
           <p>21,600,000 تومان</p>
-          <button type="button">
+          <button type="button" onclick="window.location.href='order.jsp'">
             افزودن به سبد خرید
             <span class="fas fa-shopping-basket"></span>
           </button>
@@ -265,7 +267,7 @@
         <div>
           <h3>دستگاه اسپرسوساز</h3>
           <p>9,500,000 تومان</p>
-          <button type="button">
+          <button type="button" onclick="window.location.href='order.jsp'">
             افزودن به سبد خرید
             <span class="fas fa-shopping-basket"></span>
           </button>
@@ -277,7 +279,7 @@
       <div>
         <h3>دستگاه آبمیوه گیری</h3>
         <p>12,000,000 تومان</p>
-        <button type="button">
+        <button type="button" onclick="window.location.href='order.jsp'">
           افزودن به سبد خرید
           <span class="fas fa-shopping-basket"></span>
         </button>
@@ -289,7 +291,7 @@
         <div>
           <h3>ماشین لباسشویی</h3>
           <p>17,500,000 تومان</p>
-          <button type="button">
+          <button type="button" onclick="window.location.href='order.jsp'">
             افزودن به سبد خرید
             <span class="fas fa-shopping-basket"></span>
           </button>

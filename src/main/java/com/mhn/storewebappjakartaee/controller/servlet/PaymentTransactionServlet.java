@@ -48,7 +48,7 @@ public class PaymentTransactionServlet extends HttpServlet {
         }
 
         req.setAttribute("paymentTransaction", paymentTransaction);
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        req.getRequestDispatcher("hompage.jsp").forward(req, resp);
     }
 
 

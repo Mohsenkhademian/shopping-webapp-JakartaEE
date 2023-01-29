@@ -32,9 +32,9 @@
 <body>
 <div class="container-fluid">
   <div class="row bg-dark p-4 navitm">
-    <h5 class="titr text-light">به سایت مبلمان و لوازم خانگی خوش آمدید.</h5>
+    <h5 class="titr text-light">به سایت فروشگاه لوازم خانگی خوش آمدید.</h5>
     <div class="col-2">
-      <span class="logoitm" href="#">مبلمان و لوازم خانگی</span>
+      <span class="logoitm" href="#">فروشگاه لوازم خانگی</span>
     </div>
     <div class="col-1">
       <a href="homepage.jsp">صفحه اصلی</a>
@@ -128,14 +128,14 @@
 
       <ul id="user-basket-icons" class="d-flex mt-2">
         <li>
-          <a class="nav-link text-dark" aria-current="page" href="registration.html">
+          <a class="nav-link text-dark" aria-current="page" href="signup.jsp">
 
             <span class="fas fa-user"></span>
             ورود/ثبت نام
           </a>
         </li>
         <li>
-          <a class="nav-link text-dark" href="#"
+          <a class="nav-link text-dark" href="signup.jsp"
           ><span class="fas fa-shopping-basket"></span
           ></a>
         </li>
