@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("email", email);
                 session.setAttribute("password", password);
                 session.setAttribute("validate", true);
-                req.getRequestDispatcher("index.jsp").forward(req, resp);
+                req.getRequestDispatcher("homepage.jsp").forward(req, resp);
             } else {
                 HttpSession session = req.getSession();
                 session.setAttribute("validate", false);
