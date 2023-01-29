@@ -38,7 +38,7 @@ public class StorageServlet extends HttpServlet {
             req.getRequestDispatcher("/error.jsp").forward(req, resp);
         }
         req.setAttribute("storage", storage);
-        req.getRequestDispatcher("storage.jsp").forward(req, resp);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
 

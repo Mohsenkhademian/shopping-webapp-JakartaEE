@@ -5,29 +5,32 @@
     <title>delivery</title>
 </head>
 <body>
-hiiiiiiiiiiiiii
-<table>
-  <thead>
-  <tr>
-    <th>Order ID</th>
-    <th>Recipient Name</th>
-    <th>Recipient Address</th>
-    <th>Delivery Status</th>
-    <th>Delivery Date</th>
-  </tr>
-  </thead>
-  <tbody>
-  <c:forEach items="${deliveries}" var="delivery">
-    <tr>
-      <td>${delivery.orderId}</td>
-      <td>${delivery.recipientName}</td>
-      <td>${delivery.recipientAddress}</td>
-      <td>${delivery.deliveryStatus}</td>
-      <td>${delivery.deliveryDate}</td>
-    </tr>
-  </c:forEach>
-  </tbody>
-</table>
+<form action="/delivery" method="post">
+  <div>
+    <label for="recipientName">Recipient Name:</label>
+    <input type="text" id="recipientName" name="recipientName" required>
+  </div>
+  <div>
+    <label for="recipientAddress">Recipient Address:</label>
+    <input type="text" id="recipientAddress" name="recipientAddress" required>
+  </div>
+  <div>
+    <label for="recipientNumberPhone">Recipient Phone Number:</label>
+    <input type="text" id="recipientNumberPhone" name="recipientNumberPhone" required>
+  </div>
+  <div>
+    <label for="deliveryStatus">Delivery Status:</label>
+    <input type="checkbox" id="deliveryStatus" name="deliveryStatus">
+  </div>
+  <div>
+    <label for="deliveryDateTime">Delivery Date and Time:</label>
+    <input type="datetime-local" id="deliveryDateTime" name="deliveryDateTime" required>
+  </div>
+  <div>
+    <button type="submit">Create Delivery</button>
+  </div>
+</form>
+
 
 </body>
 </html>

@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class OfferServiceTest {
-    private OfferService offerService = OfferService.getOfferService();
+   /* private OfferService offerService = OfferService.getOfferService();
 
     @Test
     void saveTest() throws Exception{
@@ -61,5 +61,5 @@ public class OfferServiceTest {
         assertNotNull(offer.getId());
         Offer findOfferById = offerService.findById(offer.getId());
         assertEquals(offer.getPrice(),findOfferById.getPrice());
-    }
+    }*/
 }

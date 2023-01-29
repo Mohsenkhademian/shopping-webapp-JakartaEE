@@ -5,16 +5,11 @@
     <title>offer</title>
 </head>
 <body>
-hi offersssss
-<table>
-  <tr>
-    <th>price</th>
-  </tr>
-<c:forEach offers="${offers}" var="offer">
-  <tr>
-    <td>${offer.price}</td>
-  </tr>
-</c:forEach>
-</table>
+<form action="/offer" method="post">
+  <label for="price">Price:</label>
+  <input type="number" id="price" name="price"><br>
+  <input type="submit" value="Submit">
+</form>
+
 </body>
 </html>

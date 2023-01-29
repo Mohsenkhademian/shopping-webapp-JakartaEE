@@ -5,30 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-hi itemmssss
+<form action="/item" method="post" enctype="multipart/form-data">
 
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Order Id</th>
-        <th>Storage Id</th>
-        <th>Offer Id</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-    </tr>
-    <c:forEach items="${items}" var="item">
-        <tr>
-            <td>${item.id}</td>
-            <td>${item.orderId}</td>
-            <td>${item.storageId}</td>
-            <td>${item.offerId}</td>
-            <td>${item.name}</td>
-            <td>${item.description}</td>
-            <td>${item.price}</td>
-        </tr>
-    </c:forEach>
-</table>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description"><br>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required min="0" max="10000"><br>
+    <label for="itemPhoto">Item Photo:</label>
+    <input type="file" id="itemPhoto" name="itemPhoto"><br>
+    <input type="submit" value="Submit">
+</form>
 
 </body>
 </html>

@@ -60,8 +60,7 @@ public class Main {
             System.out.println("All orders: " + allOrders);
 
         Delivery delivery = new Delivery();
-        LocalDate specificDate2 = LocalDate.parse("2023-06-17");
-        delivery.setDeliveryDate(specificDate2);
+        delivery.setDeliveryDateTime(LocalDateTime.now());
         delivery.setDeliveryStatus(true);
         delivery.setRecipientName("Hasan");
         delivery.setRecipientNumberPhone("09876543456");

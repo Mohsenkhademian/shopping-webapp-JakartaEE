@@ -23,7 +23,7 @@ public class OfferServlet extends HttpServlet {
             request.setAttribute("message", "Error saving item: " + e.getMessage());
         }
         request.setAttribute("offer", offer);
-        request.getRequestDispatcher("offer.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     @Override

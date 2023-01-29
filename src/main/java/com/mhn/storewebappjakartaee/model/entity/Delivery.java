@@ -7,6 +7,7 @@ import lombok.*;
 import jakarta.persistence.FetchType;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -19,7 +20,7 @@ import java.util.List;
 @Table(name = "t_delivery")
 @NamedQueries(
         {
-                @NamedQuery(name = "Delivery.findByDeliveryRecipientNameAndDate" , query = "select delivery from deliveryEntity delivery where delivery.recipientName =:recipientName and delivery.deliveryDate =:deliveryDate"),
+                @NamedQuery(name = "Delivery.findByDeliveryRecipientNameAndDate" , query = "select delivery from deliveryEntity delivery where delivery.recipientName =:recipientName and delivery.deliveryDateTime =:deliveryDateTime"),
 
         }
 )
@@ -45,7 +46,7 @@ public class Delivery extends BaseEntity {
     private Boolean deliveryStatus;
 
     @Column(name = "c_deliverydate")
-    private LocalDate deliveryDate;
+    private LocalDateTime deliveryDateTime;
 
     @Override
     public String toString() {

@@ -29,7 +29,7 @@ public class CustomerServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
         req.setAttribute("message", "Customer saved successfully!");
-        req.getRequestDispatcher("user.jsp").forward(req, resp);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
     @Override

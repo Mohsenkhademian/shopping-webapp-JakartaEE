@@ -5,6 +5,6 @@
          version="5.0">
     <!--    security constraint-->
     <welcome-file-list>
-        <welcome-file>signup.jsp</welcome-file>
+        <welcome-file>storage.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

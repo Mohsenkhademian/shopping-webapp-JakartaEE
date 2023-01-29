@@ -5,25 +5,18 @@
     <title>order</title>
 </head>
 <body>
-hi orderssss
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Customer Name</th>
-        <th>Customer Address</th>
-        <th>Order Date</th>
-        <th>Item List</th>
-    </tr>
-    <c:forEach orders="${orders}" var="order">
-        <tr>
-            <td>${order.id}</td>
-            <td>${order.customerName}</td>
-            <td>${order.customerAddress}</td>
-            <td>${order.orderDate}</td>
-            <td>${order.items}</td>
-        </tr>
-    </c:forEach>
-</table>
+<form action="/order" method="post">
+    <label for="customerName">Customer Name:</label>
+    <input type="text" id="customerName" name="customerName" required>
+    <br>
+    <label for="customerAddress">Customer Address:</label>
+    <input type="text" id="customerAddress" name="customerAddress" required>
+    <br>
+    <label for="orderDate">Order Date:</label>
+    <input type="date" id="orderDate" name="orderDate" required>
+    <br>
+    <input type="submit" value="Submit">
+</form>
 
 </body>
 </html>

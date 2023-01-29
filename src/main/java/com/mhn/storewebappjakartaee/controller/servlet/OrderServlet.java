@@ -41,7 +41,7 @@ public class OrderServlet extends HttpServlet {
         }
 
         request.setAttribute("order", order);
-        request.getRequestDispatcher("order.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
 

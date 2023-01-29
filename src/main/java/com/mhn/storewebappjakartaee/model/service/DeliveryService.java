@@ -54,11 +54,11 @@ public class DeliveryService extends ServiceImpl<Delivery , Long> {
         }
     }
 
-    public List<Delivery> findByDeliveryRecipientNameAndDate(String recipientName, LocalDate deliveryDate) throws Exception {
+    public List<Delivery> findByDeliveryRecipientNameAndDate(String recipientName, LocalDate deliveryDateTime) throws Exception {
         try (CRUDRepository<Delivery, Long> crudRepository = new CRUDRepository<>()) {
             Map<String, Object> paramMap = new HashMap<>();
             paramMap.put("recipientName", recipientName);
-            paramMap.put("deliveryDate", deliveryDate);
+            paramMap.put("deliveryDateTime", deliveryDateTime);
             List<Delivery> deliveryList = crudRepository.executeQuery("Delivery.findByDeliveryRecipientNameAndDate", paramMap);
             return (deliveryList!=null)?deliveryList:null;
         }

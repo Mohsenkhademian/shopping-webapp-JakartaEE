@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet("/comment")
@@ -19,14 +20,16 @@ public class CommentServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String text = req.getParameter("text");
-        Comment comment = Comment.builder().text(text).build();
+        int likeCount = Integer.parseInt(req.getParameter("likeCount"));
+        LocalDateTime dateTime = LocalDateTime.parse(req.getParameter("dateTime"));
+        Comment comment = Comment.builder().text(text).likeCount(likeCount).dateTime(dateTime).build();
         try {
             CommentService.getCommentService().save(comment);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
         req.setAttribute("message", "Comment saved successfully!");
-        req.getRequestDispatcher("user.jsp").forward(req, resp);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
     @Override

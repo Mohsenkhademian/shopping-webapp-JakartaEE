@@ -1,0 +1,159 @@
+
+.row-header{
+    background-color: rgb(14, 14, 14);
+    color:rgb(235, 235, 235) ;
+    height: 50px;
+}
+.main-row{
+    height: 100%;
+}
+.navbar-txt{
+    color: #ddd !important;
+    margin-right: 0 !important;
+}
+.search-box{
+    border: none !important;
+    background-color: rgb(49, 49, 49) !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+@media all and (min-width:1248px){
+    .search-box{
+        width: 976px !important;
+        border: none !important;
+        background-color: rgb(49, 49, 49) !important;
+        border-radius: 0 !important;
+        height: 56px !important;
+        margin: 0 !important;
+}
+}
+.list-group-item{
+    font-size: 8px !important;
+}
+@media all and (min-width:576px){
+    .list-group-item{
+        font-size: 16px !important;
+    }
+    .so-font{
+        font-size: 16px !important;
+    }
+    .db-font{
+        font-size: 32px !important;
+    }
+}
+.navbar{
+    padding: 0 !important;
+}
+.btn-outline-success{
+    color: #ddd !important;
+    border: none !important;
+}
+.btn-check{
+    font-size: 8px !important;
+}
+.col-menu{
+    background-color: rgb(251 251 251);
+}
+.dashboard-col4{
+    padding: 0 !important;
+    font-size: 8px !important;
+}
+.dropdown-toggle{
+    font-size: 14px !important;
+}
+.col-9{
+    box-sizing: border-box !important;
+}
+.col-10{
+    border-left: 1px solid #000;
+}
+.dashboard{
+    padding: 0 !important;
+    font-size: 30px;
+    font-weight: bold;
+}
+hr{
+    margin: 0 !important;
+}
+.dashboard-row{
+    padding: 10px 0 !important;
+    margin: 0 10px !important;
+    width: 100%;
+    
+}
+img{
+    max-width: 100% !important;
+}
+.item1::before{
+    content: '\f015';
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    margin-right: 5px;
+}
+.item2::before{
+    content: '\f15b';
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    margin-right: 5px;
+}
+.item3::before{
+    content: '\f291';
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    margin-right: 5px;
+}
+.item4::before{
+    content: '\f500';
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    margin-right: 5px;
+}
+.item5::before{
+    content: '\f012';
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    margin-right: 5px;
+}
+.item6::before{
+    content: '\f0c5';
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    margin-right: 5px;
+}
+.item1 , .item2, .item3, .item4, .item5, .item6{
+    padding: 8px 12px 8px 5px !important;
+}
+.btn-check , .btn-outline-primary{
+    font-size: 14px !important;
+    height: 35px !important;
+}
+.so-font{
+    font-size: 9px;
+}
+.db-font{
+    font-size: 18px;
+}
+@media all and (max-width:654px){
+.radio1{
+    padding: 3px 0 !important;
+    font-size: 7px !important;
+    width: 35px;
+    height: 20px !important;
+}
+.drop1{
+    padding: 0 !important;
+    font-size: 7px !important;
+    width: 45px;
+    height: 20px !important;
+}
+}
+.item7::before{
+    content: '\f1ea';
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    margin-right: 5px;
+}
+h2{
+    display: flex;
+    margin-left: 20px;
+}

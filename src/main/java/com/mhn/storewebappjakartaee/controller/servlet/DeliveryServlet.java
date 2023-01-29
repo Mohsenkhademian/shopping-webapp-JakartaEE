@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,14 +23,14 @@ public class DeliveryServlet extends HttpServlet {
         String recipientName = request.getParameter("recipientName");
         String recipientAddress = request.getParameter("recipientAddress");
         Boolean deliveryStatus = Boolean.parseBoolean(request.getParameter("deliveryStatus"));
-        LocalDate deliveryDate = LocalDate.parse(request.getParameter("deliveryDate"));
+        LocalDateTime deliveryDateTime = LocalDateTime.parse(request.getParameter("deliveryDateTime"));
         String recipientNumberPhone = request.getParameter("recipientNumberPhone");
 
         Delivery delivery = Delivery.builder()
                 .recipientName(recipientName)
                 .recipientAddress(recipientAddress)
                 .deliveryStatus(deliveryStatus)
-                .deliveryDate(deliveryDate)
+                .deliveryDateTime(deliveryDateTime)
                 .recipientNumberPhone(recipientNumberPhone)
                 .build();
         try {
@@ -38,7 +39,7 @@ public class DeliveryServlet extends HttpServlet {
         } catch (Exception e) {
             request.setAttribute("message", "Error saving delivery: " + e.getMessage());
         }
-        request.getRequestDispatcher("delivery.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
 
