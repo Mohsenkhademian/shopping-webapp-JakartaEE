@@ -15,6 +15,12 @@ import java.util.List;
 @AllArgsConstructor
 @Entity(name = "adminEntity")
 @Table(name = "t_admin")
+@NamedQueries(
+        {
+                @NamedQuery(name = "Admin.findByUserName" , query = "select admin from adminEntity admin where admin.userName =:userName"),
+
+        }
+)
 public class Admin extends BaseEntity {
 
     @Column(name = "c_username")
