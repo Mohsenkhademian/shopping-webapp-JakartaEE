@@ -1,15 +1,15 @@
 package com.mhn.storewebappjakartaee.model.entity;
 
+import com.google.gson.Gson;
 import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Builder
@@ -23,4 +23,9 @@ public class Offer extends BaseEntity {
 
     @OneToOne(mappedBy = "offer")
     private Item item;
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 }

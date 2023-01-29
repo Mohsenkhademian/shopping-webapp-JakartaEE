@@ -5,7 +5,9 @@ import com.mhn.storewebappjakartaee.model.entity.User;
 import com.mhn.storewebappjakartaee.model.repository.CRUDRepository;
 import com.mhn.storewebappjakartaee.model.service.base.ServiceImpl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AdminService extends ServiceImpl<Admin , Long> {
     private static final AdminService adminService = new AdminService();
@@ -47,6 +49,15 @@ public class AdminService extends ServiceImpl<Admin , Long> {
     public Admin findById(Long id) throws Exception {
         try (CRUDRepository<Admin , Long> crudRepository = new CRUDRepository<>()){
             return crudRepository.selectById(Admin.class , id);
+        }
+    }
+
+    public List<Admin> findByUserName(String userName) throws Exception{
+        try (CRUDRepository<Admin , Long> crudRepository = new CRUDRepository<>()){
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("userName", userName);
+            List<Admin> adminList = crudRepository.executeQuery("Admin.findByUserName", paramMap);
+            return (adminList!=null)?adminList :null;
         }
     }
 }

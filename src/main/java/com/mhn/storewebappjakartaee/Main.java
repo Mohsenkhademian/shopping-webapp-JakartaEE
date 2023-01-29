@@ -2,19 +2,96 @@ package com.mhn.storewebappjakartaee;
 
 import com.mhn.storewebappjakartaee.model.entity.*;
 import com.mhn.storewebappjakartaee.model.service.*;
-import jakarta.ejb.Local;
+
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 public class Main {
     public static void main(String[] args) throws Exception {
+
+        Admin admin = Admin.builder().userName("mohsen").password("mohsen123").build();
+        Admin admin1 = Admin.builder().userName("ali").password("ali123").build();
+        Admin admin2 = Admin.builder().userName("mamad").password("mamad123").build();
+        User user = User.builder().userName("mohsen").password("mohsen213").email("sdaf@.com").build();
+        User user1 = User.builder().userName("ali").password("2344124").email("asdf@gmail.com").build();
+        AdminService.getAdminService().save(admin);
+        AdminService.getAdminService().save(admin1);
+        AdminService.getAdminService().save(admin2);
+        UserService.getUserService().save(user);
+        UserService.getUserService().save(user1);
+
+
+        System.out.println(AdminService.getAdminService().findByUserName("mohsen"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*Offer offer = Offer.builder().price(1000).build();
+        Storage storage = Storage.builder().capacity(20).availableCapacity(10).address("tehran").name("tarebar").build();
+        Order order = Order.builder().orderDate(LocalDate.now()).customerName("moshen").customerAddress("tehransar").build();
+        Delivery delivery = Delivery.builder().deliveryStatus(true).deliveryDate(LocalDate.now()).recipientAddress("tehransar").recipientNumberPhone("12412414").build();
+        Item item = Item.builder().name("phone").itemPhoto("phone.png").description("i phone x").orders((Set<Order>) order).offer(offer).deliveries((List<Delivery>) delivery).storage(storage).build();
+
+*/
+
+
+
+
+
+
+        /*User user = User.builder().userName("ali").email("ali@gmail.com").password("ali123").build();
+        User user1 = User.builder().userName("mohsen").email("mohsen@gmail.com").password("mohsen123").build();
+        User user2 = User.builder().userName("mamad").email("mamad@gmail.com").password("mamad123").build();
+        UserService.getUserService().save(user);
+        UserService.getUserService().save(user1);
+        UserService.getUserService().save(user2);
+
+
+        System.out.println(UserService.getUserService().findByUserName( "mohsen"));*/
+
+
+        /*CRUDRepository<User,Long> generalDao1 = new CRUDRepository<>();
+        Map<String , Object> paramMap1 = new HashMap<>();
+        paramMap1.put("userName" ,  "mohsen");
+        paramMap1.put("id" ,  2);
+        System.out.println(generalDao1.executeQuery("Admin.findByUserName", paramMap1));
+
+        System.out.println(UserService.getUserService().findByUserName("mohsen"));*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /*ItemService itemService = ItemService.getItemService();
         StorageService storageService = StorageService.getStorageService();
         OfferService offerService = OfferService.getOfferService();

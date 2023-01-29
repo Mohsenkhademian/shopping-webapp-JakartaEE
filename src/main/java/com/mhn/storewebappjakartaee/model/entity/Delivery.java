@@ -1,16 +1,17 @@
 package com.mhn.storewebappjakartaee.model.entity;
 
+import com.google.gson.Gson;
 import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import jakarta.persistence.FetchType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 
 
 import java.time.LocalDate;
 import java.util.List;
-@Data
+
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Builder
@@ -40,4 +41,9 @@ public class Delivery extends BaseEntity {
 
     @Column(name = "c_deliverydate")
     private LocalDate deliveryDate;
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 }

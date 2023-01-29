@@ -1,16 +1,14 @@
 package com.mhn.storewebappjakartaee.model.entity;
 
+import com.google.gson.Gson;
 import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
 import java.time.LocalDate;
 import java.util.List;
 
-
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Builder
@@ -45,4 +43,9 @@ public class Order extends BaseEntity {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "order_id")
     private List<PaymentTransaction> paymentTransactions;
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 }

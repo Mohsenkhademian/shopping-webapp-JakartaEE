@@ -1,24 +1,24 @@
 package com.mhn.storewebappjakartaee.model.entity;
 
+import com.google.gson.Gson;
 import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
+import java.util.Set;
 
-@Data
-@EqualsAndHashCode(callSuper = true)
-@NoArgsConstructor
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "adminEntity")
 @Table(name = "t_admin")
 @NamedQueries(
         {
-                @NamedQuery(name = "Admin.findByUserName" , query = "SELECT user FROM userEntity user WHERE user.userName = :userName"),
-                @NamedQuery(name = "Admin.findByUserId" , query = "SELECT user FROM userEntity user WHERE user.id = :id"),
+                @NamedQuery(name = "Admin.findByUserName", query = "SELECT user FROM userEntity user WHERE user.userName = :userName"),
                 @NamedQuery(name = "Admin.findByItemName" , query = "SELECT item FROM itemEntity item WHERE item.name = :name"),
                 @NamedQuery(name = "Admin.findByCustomerName" , query = "SELECT customer FROM customerEntity customer WHERE customer.name =:name"),
                 @NamedQuery(name = "Admin.findByOrderDate" , query = "SELECT order FROM orderEntity order WHERE order.orderDate = :orderDate"),
@@ -37,8 +37,11 @@ public class Admin extends BaseEntity {
     @Column(name = "c_password")
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "admin_id")
-    private List<Comment> comments;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    private Set<Comment> comments;
 
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 }
