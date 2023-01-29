@@ -1,10 +1,13 @@
 package com.mhn.storewebappjakartaee.model.service;
 
+import com.mhn.storewebappjakartaee.model.entity.Admin;
 import com.mhn.storewebappjakartaee.model.entity.Offer;
 import com.mhn.storewebappjakartaee.model.repository.CRUDRepository;
 import com.mhn.storewebappjakartaee.model.service.base.ServiceImpl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class OfferService extends ServiceImpl<Offer , Long> {
     private static final OfferService offerService = new OfferService();
@@ -46,6 +49,15 @@ public class OfferService extends ServiceImpl<Offer , Long> {
     public Offer findById(Long id) throws Exception {
         try (CRUDRepository<Offer , Long> crudRepository = new CRUDRepository<>()){
             return crudRepository.selectById(Offer.class , id);
+        }
+    }
+
+    public Offer findByOfferPrice(int price) throws Exception {
+        try (CRUDRepository<Offer, Long> crudRepository = new CRUDRepository<>()) {
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("price", price);
+            List<Offer> offerList = crudRepository.executeQuery("Offer.findByOfferPrice", paramMap);
+            return (offerList!=null)?offerList.get(0):null;
         }
     }
 }

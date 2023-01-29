@@ -5,7 +5,10 @@ import com.mhn.storewebappjakartaee.model.entity.Delivery;
 import com.mhn.storewebappjakartaee.model.repository.CRUDRepository;
 import com.mhn.storewebappjakartaee.model.service.base.ServiceImpl;
 
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DeliveryService extends ServiceImpl<Delivery , Long> {
     private static final DeliveryService deliveryService = new DeliveryService();
@@ -48,6 +51,16 @@ public class DeliveryService extends ServiceImpl<Delivery , Long> {
     public Delivery findById(Long id) throws Exception {
         try (CRUDRepository<Delivery , Long> crudRepository = new CRUDRepository<>()){
             return crudRepository.selectById(Delivery.class , id);
+        }
+    }
+
+    public List<Delivery> findByDeliveryRecipientNameAndDate(String recipientName, LocalDate deliveryDate) throws Exception {
+        try (CRUDRepository<Delivery, Long> crudRepository = new CRUDRepository<>()) {
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("recipientName", recipientName);
+            paramMap.put("deliveryDate", deliveryDate);
+            List<Delivery> deliveryList = crudRepository.executeQuery("Delivery.findByDeliveryRecipientNameAndDate", paramMap);
+            return (deliveryList!=null)?deliveryList:null;
         }
     }
 }

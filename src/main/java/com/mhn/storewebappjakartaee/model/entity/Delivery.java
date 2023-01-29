@@ -1,22 +1,28 @@
 package com.mhn.storewebappjakartaee.model.entity;
 
+import com.google.gson.Gson;
 import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import jakarta.persistence.FetchType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
 
 import java.time.LocalDate;
 import java.util.List;
-@Data
+
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
 @Entity(name = "deliveryEntity")
 @Table(name = "t_delivery")
+@NamedQueries(
+        {
+                @NamedQuery(name = "Delivery.findByDeliveryRecipientNameAndDate" , query = "select delivery from deliveryEntity delivery where delivery.recipientName =:recipientName and delivery.deliveryDate =:deliveryDate"),
+
+        }
+)
 public class Delivery extends BaseEntity {
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -40,4 +46,9 @@ public class Delivery extends BaseEntity {
 
     @Column(name = "c_deliverydate")
     private LocalDate deliveryDate;
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 }

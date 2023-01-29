@@ -15,7 +15,7 @@ import java.util.List;
 public class OfferServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        double price = Double.parseDouble(request.getParameter("price"));
+        int price = Integer.parseInt(request.getParameter("price"));
         Offer offer = Offer.builder().price(price).build();
         try {
             OfferService.getOfferService().save(offer);

@@ -15,6 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet("/paymenttransaction")
@@ -22,7 +23,7 @@ public class PaymentTransactionServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         long amount = Long.parseLong(req.getParameter("amount"));
-        LocalDate transactionTime = LocalDate.parse(req.getParameter("transactionTime"));
+        LocalDateTime transactionTime = LocalDateTime.parse(req.getParameter("transactionTime"));
         User user = (User) req.getSession().getAttribute("user");
         String accountNumber = req.getParameter("accountNumber");
         int cvv2 = Integer.parseInt(req.getParameter("cvv2"));
@@ -31,7 +32,7 @@ public class PaymentTransactionServlet extends HttpServlet {
 
         PaymentTransaction paymentTransaction = PaymentTransaction.builder()
                 .amount(amount)
-                .transactionTime(transactionTime)
+                .transactionDateTime(transactionTime)
                 .user(user)
                 .accountNumber(accountNumber)
                 .cvv2(cvv2)

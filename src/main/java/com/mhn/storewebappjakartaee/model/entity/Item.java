@@ -2,6 +2,7 @@ package com.mhn.storewebappjakartaee.model.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.gson.Gson;
 import com.mhn.storewebappjakartaee.model.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,13 +11,19 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity(name = "itemEntity")
 @Table(name = "t_item")
+@NamedQueries(
+        {
+                @NamedQuery(name = "Item.findByItemName" , query = "select item from itemEntity item where item.name =:name"),
+        }
+)
 public class Item extends BaseEntity {
 
     @JsonIgnore
@@ -49,4 +56,13 @@ public class Item extends BaseEntity {
             joinColumns = @JoinColumn(name = "item_id"),
             inverseJoinColumns = @JoinColumn(name = "delivery_id"))
     private List<Delivery> deliveries;
+
+    @OneToMany(mappedBy = "item")
+    private List<Comment> comments;
+
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 }

@@ -15,6 +15,93 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+
+        Admin admin = Admin.builder().userName("mohsen").password("mohsen123").build();
+        Admin admin1 = Admin.builder().userName("ali").password("ali123").build();
+        Admin admin2 = Admin.builder().userName("mamad").password("mamad123").build();
+        System.out.println(AdminService.getAdminService().save(admin));
+        System.out.println(AdminService.getAdminService().save(admin1));
+        System.out.println(AdminService.getAdminService().save(admin2));
+
+
+
+        Item item = Item.builder().name("phone").itemPhoto("phone.png").description("iphone x").build();
+        System.out.println(ItemService.getItemService().save(item));
+        User user = User.builder().userName("moshen").numberPhone("09876543324").password("mohsen123").build();
+        System.out.println(UserService.getUserService().save(user));
+        Comment comment = Comment.builder().text("hello").dateTime(LocalDateTime.now()).user(user).admin(admin1).item(item).likeCount(3).build();
+        System.out.println(CommentService.getCommentService().save(comment));
+        Customer customer = Customer.builder().name("mamad").email("mamad@gmail.com").build();
+        CustomerService.getCustomerService().save(customer);
+
+        LocalDate date = LocalDate.of(2021,1,1);
+        Order order = new Order();
+        order.setOrderDate(date);
+        order.setCustomerName("John Doe");
+        order.setCustomerAddress("123 Main St");
+            // Test save method
+            Order savedOrder = OrderService.getOrderService().save(order);
+            System.out.println("Order saved: " + savedOrder);
+            // Test findByOrderDate method
+            Order foundOrder = OrderService.getOrderService().findByOrderDate(date);
+            System.out.println("Order found: " + foundOrder);
+            // Test update method
+            foundOrder.setCustomerName("Jane Doe");
+            Order updatedOrder = OrderService.getOrderService().update(foundOrder);
+            System.out.println("Order updated: " + updatedOrder);
+            // Test findById method
+            Order retrievedOrder = OrderService.getOrderService().findById(savedOrder.getId());
+            System.out.println("Order retrieved: " + retrievedOrder);
+            // Test delete method
+            Order deletedOrder = OrderService.getOrderService().delete(savedOrder.getId());
+            System.out.println("Order deleted: " + deletedOrder);
+            // Test findAll method
+            List<Order> allOrders = OrderService.getOrderService().findAll();
+            System.out.println("All orders: " + allOrders);
+
+        Delivery delivery = new Delivery();
+        LocalDate specificDate2 = LocalDate.parse("2023-06-17");
+        delivery.setDeliveryDate(specificDate2);
+        delivery.setDeliveryStatus(true);
+        delivery.setRecipientName("Hasan");
+        delivery.setRecipientNumberPhone("09876543456");
+        delivery.setRecipientAddress("tehransar");
+        System.out.println(DeliveryService.getDeliveryService().save(delivery));
+
+        Storage storage = Storage.builder().name("tarebar").address("tehran").capacity(142).availableCapacity(120).build();
+        System.out.println(StorageService.getStorageService().save(storage));
+
+        Offer offer = Offer.builder().price(900000000).build();
+        System.out.println(OfferService.getOfferService().save(offer));
+
+        PaymentTransaction paymentTransaction = PaymentTransaction.builder().order(order).user(user).cvv2(1234).transactionDateTime(LocalDateTime.now()).cardExpirationDate(LocalDate.now()).accountNumber("1231423524336424").amount(900000000).build();
+        System.out.println(PaymentTransactionService.getPaymentTransactionService().save(paymentTransaction));
+
+        AdminService.getAdminService().findByUserName("mohsen");
+//        AdminService.getAdminService().findByItemName("phone");
+        ItemService.getItemService().findByItemName("phone");
+        CustomerService.getCustomerService().findByCustomerName("mamad");
+        OrderService.getOrderService().findByOrderDate(LocalDate.ofEpochDay(2022-06-15));
+        DeliveryService.getDeliveryService().findByDeliveryRecipientNameAndDate("Hasan", LocalDate.parse("2023-06-17"));
+        StorageService.getStorageService().findByStorageAddress("tehran");
+        OfferService.getOfferService().findByOfferPrice(900000000);
+        CommentService.getCommentService().findByCommentText("hello");
+        PaymentTransactionService.getPaymentTransactionService().findByPaymentTransactionTransactionTime(LocalDateTime.now());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /*ItemService itemService = ItemService.getItemService();
         StorageService storageService = StorageService.getStorageService();
         OfferService offerService = OfferService.getOfferService();

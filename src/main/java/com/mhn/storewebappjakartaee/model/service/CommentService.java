@@ -1,10 +1,13 @@
 package com.mhn.storewebappjakartaee.model.service;
 
+import com.mhn.storewebappjakartaee.model.entity.Admin;
 import com.mhn.storewebappjakartaee.model.entity.Comment;
 import com.mhn.storewebappjakartaee.model.repository.CRUDRepository;
 import com.mhn.storewebappjakartaee.model.service.base.ServiceImpl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CommentService extends ServiceImpl<Comment , Long> {
     private static final CommentService commentService = new CommentService();
@@ -46,6 +49,15 @@ public class CommentService extends ServiceImpl<Comment , Long> {
     public Comment findById(Long id) throws Exception {
         try (CRUDRepository<Comment , Long> crudRepository = new CRUDRepository<>()){
             return crudRepository.selectById(Comment.class , id);
+        }
+    }
+
+    public Comment findByCommentText(String text) throws Exception {
+        try (CRUDRepository<Comment, Long> crudRepository = new CRUDRepository<>()) {
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("text", text);
+            List<Comment> commentList = crudRepository.executeQuery("Comment.findByCommentText", paramMap);
+            return (commentList!=null)?commentList.get(0):null;
         }
     }
 }
