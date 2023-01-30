@@ -4,8 +4,8 @@
 # 📢 About :
 "Our online store offers a convenient shopping experience for customers with the ability to create a user account and view products, prices, and make purchases all in one place. Additionally, store managers have the ability to access all departments, view warehouse inventory, and monitor orders through their own user account."
 # 💻 Tech Stack :
- Server : ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) <br>
- CLient : Jsp , Css , JavaScript , JQuery<br>
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) ![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white)<br>
+![JSP](https://img.shields.io/badge/jsp-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 # 🧑‍💻 Authors : 
  Server side : [Mohsen Khademian](https://github.com/Mohsenkhademian)<br>
  Client side : [Romina Arjmand](https://github.com/Rominaarjomand)<br>
