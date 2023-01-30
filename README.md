@@ -4,7 +4,7 @@
 # 📢 About :
 "Our online store offers a convenient shopping experience for customers with the ability to create a user account and view products, prices, and make purchases all in one place. Additionally, store managers have the ability to access all departments, view warehouse inventory, and monitor orders through their own user account."
 # 💻 Tech Stack :
- Server : Java , Oracle <br>
+ Server : ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) <br>
  CLient : Jsp , Css , JavaScript , JQuery<br>
 # 🧑‍💻 Authors : 
  Server side : [Mohsen Khademian](https://github.com/Mohsenkhademian)<br>
