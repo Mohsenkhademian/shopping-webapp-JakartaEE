@@ -3,7 +3,7 @@
 # [![Typing SVG](https://readme-typing-svg.herokuapp.com?size=19&color=0F9DAE&background=FF2C0000&multiline=true&lines=This+is+shopping+website)](https://git.io/typing-svg)
 # 📢 About :
 "Our online store offers a convenient shopping experience for customers with the ability to create a user account and view products, prices, and make purchases all in one place. Additionally, store managers have the ability to access all departments, view warehouse inventory, and monitor orders through their own user account."
-# Tech Stack
+# 💻Tech Stack
  Server : Java , Oracle <br>
  CLient : Jsp , Css , JavaScript , JQuery<br>
 # [![Typing SVG](https://readme-typing-svg.herokuapp.com?size=19&color=0F9A&background=FF2C0000&multiline=true&lines=Under+Construction+...+please+wait)](https://git.io/typing-svg)
