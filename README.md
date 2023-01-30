@@ -1,7 +1,7 @@
 ## shopping-webapp-JakartaEE
 ##    ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif) Hi guys
 # [![Typing SVG](https://readme-typing-svg.herokuapp.com?size=19&color=0F9DAE&background=FF2C0000&multiline=true&lines=This+is+a+shopping+website)](https://git.io/typing-svg)
-## <img align="center" alt="Codind" width="500" height="300" src="https://payload.cargocollective.com/1/8/270313/8807453/ECP_VV_Business_12fps.gif">
+## <img align="center" alt="Codind" width="500" height="300" src="https://www.mypluspoint.in/wp-content/uploads/2020/01/ecom-pro2.gif">
 # 📢 About :
 "Our online store offers a convenient shopping experience for customers with the ability to create a user account and view products, prices, and make purchases all in one place. Additionally, store managers have the ability to access all departments, view warehouse inventory, and monitor orders through their own user account."
 # 💻 Tech Stack :
