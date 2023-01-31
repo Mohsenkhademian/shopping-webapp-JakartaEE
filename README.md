@@ -10,5 +10,5 @@
 # 🧑‍💻 Authors : 
  Server side : [Mohsen Khademian](https://github.com/Mohsenkhademian)<br>
  Client side : [Romina Arjmand](https://github.com/Rominaarjomand)<br>
-# [![Typing SVG](https://readme-typing-svg.herokuapp.com?size=19&color=0F9A&background=FF2C0000&multiline=true&lines=Under+Construction+...+please+wait)](https://git.io/typing-svg)
+# 👷 [![Typing SVG](https://readme-typing-svg.herokuapp.com?size=19&color=0F9A&background=FF2C0000&multiline=true&lines=Under+Construction+...+please+wait)](https://git.io/typing-svg)
 ## <img align="center" alt="whopping-website" width="800" height="400" src="https://officechai.com/wp-content/uploads/2015/11/online-shopping.jpg">
